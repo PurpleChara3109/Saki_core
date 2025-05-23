@@ -1,0 +1,3 @@
+../app/display.c:26:6:DISPLAY_init	16	static
+../app/display.c:43:6:DISPLAY_refresh	48	static
+../app/display.c:82:6:DISPLAY_sync_with_grid	24	static

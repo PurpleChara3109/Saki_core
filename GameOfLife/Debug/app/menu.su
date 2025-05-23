@@ -1,0 +1,3 @@
+../app/menu.c:28:6:MENU_open	8	static
+../app/menu.c:35:6:MENU_display	24	static
+../app/menu.c:53:6:MENU_handle_input	24	static

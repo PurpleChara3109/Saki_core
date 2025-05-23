@@ -1,0 +1,6 @@
+../app/gameoflife.c:56:6:GAMEOFLIFE_init	3
+../app/gameoflife.c:99:6:GAMEOFLIFE_process_main	10
+../app/gameoflife.c:159:13:GAMEOFLIFE_process_ms	3
+../app/gameoflife.c:179:13:GAMEOFLIFE_next_generation	18
+../app/gameoflife.c:252:6:GAMEOFLIFE_touchscreen	8
+../app/gameoflife.c:295:6:GAMEOFLIFE_create_pattern	14

@@ -1,0 +1,6 @@
+../app/gameoflife.c:56:6:GAMEOFLIFE_init	24	static
+../app/gameoflife.c:99:6:GAMEOFLIFE_process_main	40	static
+../app/gameoflife.c:159:13:GAMEOFLIFE_process_ms	4	static
+../app/gameoflife.c:179:13:GAMEOFLIFE_next_generation	56	static
+../app/gameoflife.c:252:6:GAMEOFLIFE_touchscreen	24	static
+../app/gameoflife.c:295:6:GAMEOFLIFE_create_pattern	24	static

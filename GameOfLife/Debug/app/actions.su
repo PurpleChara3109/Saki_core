@@ -1,0 +1,8 @@
+../app/actions.c:18:6:TRANSITION_vertical_wipe	32	static
+../app/actions.c:30:6:TRANSITION_apply_with_grid	16	static
+../app/actions.c:41:6:action_play_pause	8	static
+../app/actions.c:69:6:action_clear_grid	16	static
+../app/actions.c:86:6:action_save_grid	4	static
+../app/actions.c:91:6:action_open_menu	8	static
+../app/actions.c:99:6:action_open_settings	16	static
+../app/actions.c:109:6:action_to_do	16	static
