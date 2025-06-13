@@ -1,0 +1,11 @@
+<map id="GAMEOFLIFE_init" name="GAMEOFLIFE_init">
+<area shape="rect" id="Node000001" title="Initialisation de notre Jeu de la vie. On initialise l&#39;écran LCD, le fonctionnalité tactile,..." alt="" coords="5,55,140,80"/>
+<area shape="rect" id="Node000002" href="$button_8c.html#a8465aa4d2944eabead377f59a44ab073" title=" " alt="" coords="196,5,309,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,52,191,32,192,37,120,57"/>
+<area shape="rect" id="Node000004" href="$display_8c.html#a7ffe3a1eb9de5d766a71c82b9e29479e" title=" " alt="" coords="201,55,305,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="140,65,187,65,187,70,140,70"/>
+<area shape="rect" id="Node000005" href="$display_8c.html#a15c5c46a0ccf2221b4d3b93e153a468c" title=" " alt="" coords="188,104,317,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="120,77,192,98,191,103,119,83"/>
+<area shape="rect" id="Node000003" href="$button_8c.html#a338ccada0b368bdf1c0981df34ba94b3" title=" " alt="" coords="365,5,535,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="310,15,352,15,352,21,310,21"/>
+</map>

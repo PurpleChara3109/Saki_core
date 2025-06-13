@@ -1,0 +1,40 @@
+\doxysection{menu.\+h}
+\hypertarget{menu_8h_source}{}\label{menu_8h_source}\mbox{\hyperlink{menu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ MENU\_H\_}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ MENU\_H\_}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Fichiers\ utiles\ pour\ la\ config\ des\ menu}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{actions_8h}{actions.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ Variables\ et\ structures/énumérations\ utiles}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184ae7b38a01ff45aa7e97a25db08976b11a}{MENU\_PLAY\_PAUSE}},}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184a64fef4f5f80cc6bd70d890444ec8dd9a}{MENU\_CLEAR\_GRID}},}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184aae9b5e2d5e58a921bf261a88fa21829e}{MENU\_SAVE\_GRID}},}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184ada67f8ed3ea3d052c3a048a0e98a6bd6}{MENU\_LOAD\_GRID}},}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184ab1b2bbc31aa3b2c1b3de336010e20e7f}{MENU\_SELECT\_PATTERN}},}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184af278282f4de460ab6987bb27729d9c63}{MENU\_NB}}\ \ \ \textcolor{comment}{//\ celui\ là\ sert\ pour\ les\ boucles\ for\ (\ à\ voir\ si\ je\ le\ garde\ ou\ pas)}}
+\DoxyCodeLine{00022\ \}\ \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184}{menu\_e}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184}{menu\_e}}\ \mbox{\hyperlink{menu_8h_a415e9887f2fba8dc615187777ae558c5}{selected\_menu}};\ \ \textcolor{comment}{//\ menu\ sélectionné}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\_actions\_e}}\ \mbox{\hyperlink{menu_8h_a9b2291ad5bd77e04a695e459dd77a344}{action}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{menu_8h_a0fdecda1ad03dfe9115700dcdd964976}{is\_paused}};\ \textcolor{comment}{//\ Assurez-\/vous\ que\ c'est\ bien\ la\ même\ variable\ que\ dans\ gameoflife.c}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{menu_8h_aeac3fa565c8e7503faaeda44618bd4b4}{in\_menu}};\ \textcolor{comment}{//\ Assurez-\/vous\ que\ c'est\ bien\ la\ même\ variable\ que\ dans\ gameoflife.c}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{menu_8h_a030a818574f03b44c17101df9e60573c}{in\_pattern\_menu}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a155bc8b3600270ca91848e16e416200e}{MENU\_display}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a958d728ad53b9a0ca10f026167c7005a}{MENU\_open}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a3d0d6b257f25ff2d5305cde812ab9ab8}{MENU\_handle\_input}}(\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\_e}}\ left,\ \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\_e}}\ center);}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a08b7e4ff13321fedbea7fdeb5b481b0a}{PATTERN\_MENU\_handle\_input}}(\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\_e}}\ nav,\ \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\_e}}\ validate);}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{menu_8h_a827c0a962cd6f5471dc68c781736535e}{PATTERN\_MENU\_open}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

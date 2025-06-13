@@ -1,0 +1,252 @@
+\doxysection{test.\+c File Reference}
+\hypertarget{test_8c}{}\label{test_8c}\index{test.c@{test.c}}
+{\ttfamily \#include "{}test.\+h"{}}\newline
+{\ttfamily \#include "{}gameoflife.\+h"{}}\newline
+{\ttfamily \#include "{}actions.\+h"{}}\newline
+{\ttfamily \#include "{}menu.\+h"{}}\newline
+{\ttfamily \#include "{}button.\+h"{}}\newline
+{\ttfamily \#include "{}display.\+h"{}}\newline
+{\ttfamily \#include "{}TFT\+\_\+ili9341/stm32g4\+\_\+ili9341.\+h"{}}\newline
+{\ttfamily \#include "{}TFT\+\_\+ili9341/stm32g4\+\_\+xpt2046.\+h"{}}\newline
+{\ttfamily \#include "{}TFT\+\_\+ili9341/stm32g4\+\_\+fonts.\+h"{}}\newline
+{\ttfamily \#include "{}stm32g4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for test.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2b}{test\+\_\+state\+\_\+e}} \{ \newline
+\mbox{\hyperlink{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba1fd61e3293d90aa7e6f57c8fe6a96577}{TEST\+\_\+\+INIT\+\_\+\+DISPLAY}}
+, \mbox{\hyperlink{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba7f33f4ccaa80d3abb8d734e1d21fdc16}{TEST\+\_\+\+GLIDER\+\_\+\+GEN}}
+, \mbox{\hyperlink{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba1194dcca54bc70e07df74b61fadf76ed}{TEST\+\_\+\+PLAY\+\_\+\+ACTION}}
+, \mbox{\hyperlink{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2bafd1e7292b2085f8ab6be0750ea35a0c9}{TEST\+\_\+\+GENERATIONS\+\_\+\+RUN}}
+, \newline
+\mbox{\hyperlink{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba5aabc3162589dcd93d5391caa04a70b4}{TEST\+\_\+\+PAUSE\+\_\+\+ACTION}}
+, \mbox{\hyperlink{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba4ef538b3260c64086451af923b17bdec}{TEST\+\_\+\+CLEAR\+\_\+\+GRID\+\_\+\+ACTION}}
+, \mbox{\hyperlink{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2baf705f3c151bd844ac087ab8a0432c5a7}{TEST\+\_\+\+MENU\+\_\+\+OPEN}}
+, \mbox{\hyperlink{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba8320f3fcc742eda7a02beae04f2cd1b3}{TEST\+\_\+\+MENU\+\_\+\+NAVIGATE}}
+, \newline
+\mbox{\hyperlink{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba7a0abda758099013acbe1fac72aae969}{TEST\+\_\+\+MENU\+\_\+\+SELECT\+\_\+\+PATTERN}}
+, \mbox{\hyperlink{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2babb1429913b60ffc7deef4016ab36ccd0}{TEST\+\_\+\+PATTERN\+\_\+\+MENU\+\_\+\+NAVIGATE}}
+, \mbox{\hyperlink{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2baa489aacb2e18b593d8d2d95d9115f27c}{TEST\+\_\+\+PATTERN\+\_\+\+CREATE}}
+, \mbox{\hyperlink{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba0dbd3cd3687c32ed8b76be2b97c0c68c}{TEST\+\_\+\+END\+\_\+\+SUMMARY}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test_8c_aee5e5b01def5b658c76ced8fdb3ac8e6}{TEST\+\_\+screen}} (void)
+\begin{DoxyCompactList}\small\item\em Test de l\textquotesingle{}écran uniquement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test_8c_a9fd350777a056bf6a20ecd8c434ee024}{TEST\+\_\+tactile}} (void)
+\begin{DoxyCompactList}\small\item\em Test de l\textquotesingle{}écran tactile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test_8c_a55c2c785f39f0a5f9e89489637ce8d39}{test\+\_\+log}} (const char \texorpdfstring{$\ast$}{*}message, bool success)
+\begin{DoxyCompactList}\small\item\em Affiche un message de test sur la console série. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test_8c_ab0abdf114a842fa36670b98876362227}{TEST\+\_\+state\+\_\+machine\+\_\+run}} (void)
+\begin{DoxyCompactList}\small\item\em Fonction principale de la machine à états de test. Cette fonction doit être appelée en continu dans la boucle \textquotesingle{}main\textquotesingle{} lorsque le mode test est activé. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structgrid__t}{grid\+\_\+t}} \mbox{\hyperlink{test_8c_aab090ad7eb6b25c2100d8e2328a7e5c7}{grid0}}
+\begin{DoxyCompactList}\small\item\em Gère les différentes actions disponibles et effectuées par l\textquotesingle{}utilisateur. @\+Author \+: Valéry et Neïssa. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{test_8c_a0fdecda1ad03dfe9115700dcdd964976}{is\+\_\+paused}}
+\item 
+\mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\+\_\+actions\+\_\+e}} \mbox{\hyperlink{test_8c_a9b2291ad5bd77e04a695e459dd77a344}{action}}
+\item 
+volatile bool \mbox{\hyperlink{test_8c_aeac3fa565c8e7503faaeda44618bd4b4}{in\+\_\+menu}}
+\item 
+\mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184}{menu\+\_\+e}} \mbox{\hyperlink{test_8c_a415e9887f2fba8dc615187777ae558c5}{selected\+\_\+menu}}
+\item 
+\mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91}{pattern\+\_\+e}} \mbox{\hyperlink{test_8c_a0d4413388976a9ff0f953cdc10c48a27}{selected\+\_\+pattern}}
+\item 
+volatile bool \mbox{\hyperlink{test_8c_a030a818574f03b44c17101df9e60573c}{in\+\_\+pattern\+\_\+menu}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2b}\label{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2b} 
+\index{test.c@{test.c}!test\_state\_e@{test\_state\_e}}
+\index{test\_state\_e@{test\_state\_e}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{test\_state\_e}{test\_state\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2b}{test\+\_\+state\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_INIT\_DISPLAY@{TEST\_INIT\_DISPLAY}!test.c@{test.c}}\index{test.c@{test.c}!TEST\_INIT\_DISPLAY@{TEST\_INIT\_DISPLAY}}}\Hypertarget{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba1fd61e3293d90aa7e6f57c8fe6a96577}\label{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba1fd61e3293d90aa7e6f57c8fe6a96577} 
+TEST\+\_\+\+INIT\+\_\+\+DISPLAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_GLIDER\_GEN@{TEST\_GLIDER\_GEN}!test.c@{test.c}}\index{test.c@{test.c}!TEST\_GLIDER\_GEN@{TEST\_GLIDER\_GEN}}}\Hypertarget{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba7f33f4ccaa80d3abb8d734e1d21fdc16}\label{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba7f33f4ccaa80d3abb8d734e1d21fdc16} 
+TEST\+\_\+\+GLIDER\+\_\+\+GEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_PLAY\_ACTION@{TEST\_PLAY\_ACTION}!test.c@{test.c}}\index{test.c@{test.c}!TEST\_PLAY\_ACTION@{TEST\_PLAY\_ACTION}}}\Hypertarget{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba1194dcca54bc70e07df74b61fadf76ed}\label{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba1194dcca54bc70e07df74b61fadf76ed} 
+TEST\+\_\+\+PLAY\+\_\+\+ACTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_GENERATIONS\_RUN@{TEST\_GENERATIONS\_RUN}!test.c@{test.c}}\index{test.c@{test.c}!TEST\_GENERATIONS\_RUN@{TEST\_GENERATIONS\_RUN}}}\Hypertarget{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2bafd1e7292b2085f8ab6be0750ea35a0c9}\label{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2bafd1e7292b2085f8ab6be0750ea35a0c9} 
+TEST\+\_\+\+GENERATIONS\+\_\+\+RUN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_PAUSE\_ACTION@{TEST\_PAUSE\_ACTION}!test.c@{test.c}}\index{test.c@{test.c}!TEST\_PAUSE\_ACTION@{TEST\_PAUSE\_ACTION}}}\Hypertarget{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba5aabc3162589dcd93d5391caa04a70b4}\label{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba5aabc3162589dcd93d5391caa04a70b4} 
+TEST\+\_\+\+PAUSE\+\_\+\+ACTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_CLEAR\_GRID\_ACTION@{TEST\_CLEAR\_GRID\_ACTION}!test.c@{test.c}}\index{test.c@{test.c}!TEST\_CLEAR\_GRID\_ACTION@{TEST\_CLEAR\_GRID\_ACTION}}}\Hypertarget{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba4ef538b3260c64086451af923b17bdec}\label{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba4ef538b3260c64086451af923b17bdec} 
+TEST\+\_\+\+CLEAR\+\_\+\+GRID\+\_\+\+ACTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_MENU\_OPEN@{TEST\_MENU\_OPEN}!test.c@{test.c}}\index{test.c@{test.c}!TEST\_MENU\_OPEN@{TEST\_MENU\_OPEN}}}\Hypertarget{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2baf705f3c151bd844ac087ab8a0432c5a7}\label{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2baf705f3c151bd844ac087ab8a0432c5a7} 
+TEST\+\_\+\+MENU\+\_\+\+OPEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_MENU\_NAVIGATE@{TEST\_MENU\_NAVIGATE}!test.c@{test.c}}\index{test.c@{test.c}!TEST\_MENU\_NAVIGATE@{TEST\_MENU\_NAVIGATE}}}\Hypertarget{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba8320f3fcc742eda7a02beae04f2cd1b3}\label{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba8320f3fcc742eda7a02beae04f2cd1b3} 
+TEST\+\_\+\+MENU\+\_\+\+NAVIGATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_MENU\_SELECT\_PATTERN@{TEST\_MENU\_SELECT\_PATTERN}!test.c@{test.c}}\index{test.c@{test.c}!TEST\_MENU\_SELECT\_PATTERN@{TEST\_MENU\_SELECT\_PATTERN}}}\Hypertarget{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba7a0abda758099013acbe1fac72aae969}\label{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba7a0abda758099013acbe1fac72aae969} 
+TEST\+\_\+\+MENU\+\_\+\+SELECT\+\_\+\+PATTERN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_PATTERN\_MENU\_NAVIGATE@{TEST\_PATTERN\_MENU\_NAVIGATE}!test.c@{test.c}}\index{test.c@{test.c}!TEST\_PATTERN\_MENU\_NAVIGATE@{TEST\_PATTERN\_MENU\_NAVIGATE}}}\Hypertarget{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2babb1429913b60ffc7deef4016ab36ccd0}\label{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2babb1429913b60ffc7deef4016ab36ccd0} 
+TEST\+\_\+\+PATTERN\+\_\+\+MENU\+\_\+\+NAVIGATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_PATTERN\_CREATE@{TEST\_PATTERN\_CREATE}!test.c@{test.c}}\index{test.c@{test.c}!TEST\_PATTERN\_CREATE@{TEST\_PATTERN\_CREATE}}}\Hypertarget{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2baa489aacb2e18b593d8d2d95d9115f27c}\label{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2baa489aacb2e18b593d8d2d95d9115f27c} 
+TEST\+\_\+\+PATTERN\+\_\+\+CREATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_END\_SUMMARY@{TEST\_END\_SUMMARY}!test.c@{test.c}}\index{test.c@{test.c}!TEST\_END\_SUMMARY@{TEST\_END\_SUMMARY}}}\Hypertarget{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba0dbd3cd3687c32ed8b76be2b97c0c68c}\label{test_8c_acf2e0b3b6bd1cb4c5834fe07f2a3ab2ba0dbd3cd3687c32ed8b76be2b97c0c68c} 
+TEST\+\_\+\+END\+\_\+\+SUMMARY&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test_8c_a55c2c785f39f0a5f9e89489637ce8d39}\label{test_8c_a55c2c785f39f0a5f9e89489637ce8d39} 
+\index{test.c@{test.c}!test\_log@{test\_log}}
+\index{test\_log@{test\_log}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{test\_log()}{test\_log()}}
+{\footnotesize\ttfamily void test\+\_\+log (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{message,  }\item[{bool}]{success }\end{DoxyParamCaption})}
+
+
+
+Affiche un message de test sur la console série. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Le message à afficher. \\
+\hline
+{\em success} & Indique si le test associé a réussi (true) ou échoué (false). \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test_8c_a55c2c785f39f0a5f9e89489637ce8d39_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{test_8c_aee5e5b01def5b658c76ced8fdb3ac8e6}\label{test_8c_aee5e5b01def5b658c76ced8fdb3ac8e6} 
+\index{test.c@{test.c}!TEST\_screen@{TEST\_screen}}
+\index{TEST\_screen@{TEST\_screen}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_screen()}{TEST\_screen()}}
+{\footnotesize\ttfamily void TEST\+\_\+screen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Test de l\textquotesingle{}écran uniquement. 
+
+\Hypertarget{test_8c_ab0abdf114a842fa36670b98876362227}\label{test_8c_ab0abdf114a842fa36670b98876362227} 
+\index{test.c@{test.c}!TEST\_state\_machine\_run@{TEST\_state\_machine\_run}}
+\index{TEST\_state\_machine\_run@{TEST\_state\_machine\_run}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_state\_machine\_run()}{TEST\_state\_machine\_run()}}
+{\footnotesize\ttfamily void TEST\+\_\+state\+\_\+machine\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction principale de la machine à états de test. Cette fonction doit être appelée en continu dans la boucle \textquotesingle{}main\textquotesingle{} lorsque le mode test est activé. 
+
+Exécute la machine à états de test. Cette fonction doit être appelée de manière répétée dans la boucle principale (main) lorsque TEST\+\_\+\+MODE est activé. Sinon, les autres tests peuvent être effectuées sans activer cette variables, juste en les décommentant. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test_8c_ab0abdf114a842fa36670b98876362227_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{test_8c_ab0abdf114a842fa36670b98876362227_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{test_8c_a9fd350777a056bf6a20ecd8c434ee024}\label{test_8c_a9fd350777a056bf6a20ecd8c434ee024} 
+\index{test.c@{test.c}!TEST\_tactile@{TEST\_tactile}}
+\index{TEST\_tactile@{TEST\_tactile}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_tactile()}{TEST\_tactile()}}
+{\footnotesize\ttfamily void TEST\+\_\+tactile (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Test de l\textquotesingle{}écran tactile. 
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{test_8c_a9b2291ad5bd77e04a695e459dd77a344}\label{test_8c_a9b2291ad5bd77e04a695e459dd77a344} 
+\index{test.c@{test.c}!action@{action}}
+\index{action@{action}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{action}{action}}
+{\footnotesize\ttfamily \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\+\_\+actions\+\_\+e}} action\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{test_8c_aab090ad7eb6b25c2100d8e2328a7e5c7}\label{test_8c_aab090ad7eb6b25c2100d8e2328a7e5c7} 
+\index{test.c@{test.c}!grid0@{grid0}}
+\index{grid0@{grid0}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{grid0}{grid0}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgrid__t}{grid\+\_\+t}} grid0\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Gère les différentes actions disponibles et effectuées par l\textquotesingle{}utilisateur. @\+Author \+: Valéry et Neïssa. 
+
+\Hypertarget{test_8c_aeac3fa565c8e7503faaeda44618bd4b4}\label{test_8c_aeac3fa565c8e7503faaeda44618bd4b4} 
+\index{test.c@{test.c}!in\_menu@{in\_menu}}
+\index{in\_menu@{in\_menu}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{in\_menu}{in\_menu}}
+{\footnotesize\ttfamily volatile bool in\+\_\+menu\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{test_8c_a030a818574f03b44c17101df9e60573c}\label{test_8c_a030a818574f03b44c17101df9e60573c} 
+\index{test.c@{test.c}!in\_pattern\_menu@{in\_pattern\_menu}}
+\index{in\_pattern\_menu@{in\_pattern\_menu}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{in\_pattern\_menu}{in\_pattern\_menu}}
+{\footnotesize\ttfamily volatile bool in\+\_\+pattern\+\_\+menu\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{test_8c_a0fdecda1ad03dfe9115700dcdd964976}\label{test_8c_a0fdecda1ad03dfe9115700dcdd964976} 
+\index{test.c@{test.c}!is\_paused@{is\_paused}}
+\index{is\_paused@{is\_paused}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{is\_paused}{is\_paused}}
+{\footnotesize\ttfamily volatile bool is\+\_\+paused\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{test_8c_a415e9887f2fba8dc615187777ae558c5}\label{test_8c_a415e9887f2fba8dc615187777ae558c5} 
+\index{test.c@{test.c}!selected\_menu@{selected\_menu}}
+\index{selected\_menu@{selected\_menu}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{selected\_menu}{selected\_menu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184}{menu\+\_\+e}} selected\+\_\+menu\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{test_8c_a0d4413388976a9ff0f953cdc10c48a27}\label{test_8c_a0d4413388976a9ff0f953cdc10c48a27} 
+\index{test.c@{test.c}!selected\_pattern@{selected\_pattern}}
+\index{selected\_pattern@{selected\_pattern}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{selected\_pattern}{selected\_pattern}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91}{pattern\+\_\+e}} selected\+\_\+pattern\hspace{0.3cm}{\ttfamily [extern]}}
+

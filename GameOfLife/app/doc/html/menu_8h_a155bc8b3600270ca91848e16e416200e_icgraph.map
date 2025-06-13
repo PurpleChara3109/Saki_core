@@ -1,0 +1,17 @@
+<map id="MENU_display" name="MENU_display">
+<area shape="rect" id="Node000001" title=": Fonction pour afficher le menu à l&#39;écran On affiche à l&#39;écran tous les menus accessibles" alt="" coords="889,56,1005,81"/>
+<area shape="rect" id="Node000002" href="$menu_8c.html#aaaaf428b2189589da7ec3138d9af92fe" title="Navigue dans le menu avec le bouton du bas. Chaque appui passe à l&#39;élément suivant (boucle circulaire..." alt="" coords="688,7,841,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="886,55,812,35,814,30,887,50"/>
+<area shape="rect" id="Node000003" href="$menu_8c.html#a958d728ad53b9a0ca10f026167c7005a" title="Ouvre le menu." alt="" coords="714,56,815,81"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="876,71,816,71,816,66,876,66"/>
+<area shape="rect" id="Node000006" href="$test_8c.html#ab0abdf114a842fa36670b98876362227" title="Fonction principale de la machine à états de test. Cette fonction doit être appelée en continu dans l..." alt="" coords="108,56,293,81"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="891,87,842,97,691,107,541,105,404,96,293,84,294,79,404,90,541,99,691,101,841,91,890,82"/>
+<area shape="rect" id="Node000004" href="$actions_8c.html#aadb3b0ea37cd389d4dcea88c55ca9124" title=" " alt="" coords="495,56,640,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="700,71,640,71,640,66,700,66"/>
+<area shape="rect" id="Node000005" href="$actions_8c.html#a01612a351b76c9214cc7a6133c587081" title=" " alt="" coords="341,5,447,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="509,55,438,33,439,28,510,49"/>
+<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="481,71,293,71,293,66,481,66"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="332,37,251,58,249,53,331,32"/>
+<area shape="rect" id="Node000007" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,56,60,81"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="95,71,60,71,60,66,95,66"/>
+</map>

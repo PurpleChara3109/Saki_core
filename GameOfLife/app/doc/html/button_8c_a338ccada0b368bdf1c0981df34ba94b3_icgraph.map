@@ -1,0 +1,9 @@
+<map id="BUTTONS_process_ms" name="BUTTONS_process_ms">
+<area shape="rect" id="Node000001" title=" " alt="" coords="452,5,621,31"/>
+<area shape="rect" id="Node000002" href="$button_8c.html#a8465aa4d2944eabead377f59a44ab073" title=" " alt="" coords="291,5,404,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="438,21,404,21,404,15,438,15"/>
+<area shape="rect" id="Node000003" href="$gameoflife_8c.html#a8dbd37c309fa40113ffb0c473a8954c3" title="Initialisation de notre Jeu de la vie. On initialise l&#39;écran LCD, le fonctionnalité tactile,..." alt="" coords="108,5,243,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="277,21,243,21,243,15,277,15"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>

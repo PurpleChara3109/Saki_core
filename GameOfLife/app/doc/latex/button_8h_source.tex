@@ -1,0 +1,47 @@
+\doxysection{button.\+h}
+\hypertarget{button_8h_source}{}\label{button_8h_source}\mbox{\hyperlink{button_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ button.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Feb\ 12,\ 2024}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ Nirgal}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\ \#ifndef\ BUTTON\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \#define\ BUTTON\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \#include\ "{}stm32g4xx\_hal.h"{}}}
+\DoxyCodeLine{00012\ \ \textcolor{comment}{//possibles\ événements\ des\ boutons}}
+\DoxyCodeLine{00013\ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00014\ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066aa4a7fed0d1e981a5782cc5cf137e5e9bb}{BUTTON\_NO\_EVENT}},}
+\DoxyCodeLine{00016\ \ \ \ \ \ \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066aabf9fa6151b11929b7b4b0411a42a3945}{BUTTON\_PRESS\_EVENT}},}
+\DoxyCodeLine{00017\ \ \ \ \ \ \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066aab2e2a0c9b50dde42cab187a9b1a61f27}{BUTTON\_RELEASE\_EVENT}}}
+\DoxyCodeLine{00018\ \ \}\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\_e}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \textcolor{comment}{//les\ actions\ réaliasasbles\ par\ l'utilisateur}}
+\DoxyCodeLine{00021\ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382faeabb516226f3df30c332c998da773f56db}{ACTION\_NONE}},}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382faea96da8b132ccc1f8d68d1aab1f78eae1a}{ACTION\_PLAY\_PAUSE}},}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382faea3f9901bae9fabe55a976ed41411c050e}{ACTION\_CLEAR\_GRID}},}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382faea4f0efe5baa600b12389e1181e3435dd5}{ACTION\_SAVE\_GRID}},}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382faeac3e6af043c7f36458aab562e069283c0}{ACTION\_OPEN\_MENU}},}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382faea6150ff6f90d21ea65b934a8d19313699}{ACTION\_SELECT\_PATTERNS}},}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382faea5240433babcb6ce55c1d6eb2887eaba2}{ACTION\_CREATE\_PATTERNS}},}
+\DoxyCodeLine{00029\ \ \}\mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\_actions\_e}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{button_8h_a8465aa4d2944eabead377f59a44ab073}{BUTTONS\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00032\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{button_8h_aa8fadb4fd0d08d6dc3b728ab782bcb8d}{BUTTONS\_update}}(}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\_e}}\ *\ button\_down\_event,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\_e}}\ *\ button\_center\_event);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ uint8\_t\ \mbox{\hyperlink{button_8h_a8186b1c215dd5256a5132e71c4aa9ae9}{BUTTON\_down\_read}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00038\ \ uint8\_t\ \mbox{\hyperlink{button_8h_a7e21e93b230faf0b120491cb9db219ed}{BUTTON\_center\_read}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \#endif\ }\textcolor{comment}{/*\ BUTTON\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00042\ }
+
+\end{DoxyCode}

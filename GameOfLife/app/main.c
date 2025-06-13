@@ -7,13 +7,15 @@
   ******************************************************************************
 */
 #include "gameoflife.h"
+#include "config.h"
 #include "stm32g4xx_hal.h"
 #include "stm32g4_uart.h"
 #include "stm32g4_sys.h"
 #include "stm32g4_gpio.h"
 #include "stm32g4_systick.h"
 #include "TFT_ili9341/stm32g4_ili9341.h"  // ou le bon chemin
-
+#include "test.h"
+#include "stm32g4_flash.h"
 
 int main(void)
 {
@@ -36,9 +38,19 @@ int main(void)
 
 	GAMEOFLIFE_init();
 
+//	TEST_screen();	// Test de l'écran
+
+#if ACTIVE_TEST
+
+	while(1)
+	{
+		TEST_state_machine_run();
+	}
+#endif
 
 	while(1)	//Boucle de tâche de fond
 	{
+//		TEST_tactile();
 		GAMEOFLIFE_process_main();
 	}
 

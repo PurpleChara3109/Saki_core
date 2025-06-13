@@ -10,7 +10,8 @@ C_SRCS += \
 ../app/display.c \
 ../app/gameoflife.c \
 ../app/main.c \
-../app/menu.c 
+../app/menu.c \
+../app/test.c 
 
 OBJS += \
 ./app/actions.o \
@@ -18,7 +19,8 @@ OBJS += \
 ./app/display.o \
 ./app/gameoflife.o \
 ./app/main.o \
-./app/menu.o 
+./app/menu.o \
+./app/test.o 
 
 C_DEPS += \
 ./app/actions.d \
@@ -26,7 +28,8 @@ C_DEPS += \
 ./app/display.d \
 ./app/gameoflife.d \
 ./app/main.d \
-./app/menu.d 
+./app/menu.d \
+./app/test.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -36,7 +39,7 @@ app/%.o app/%.su app/%.cyclo: ../app/%.c app/subdir.mk
 clean: clean-app
 
 clean-app:
-	-$(RM) ./app/actions.cyclo ./app/actions.d ./app/actions.o ./app/actions.su ./app/button.cyclo ./app/button.d ./app/button.o ./app/button.su ./app/display.cyclo ./app/display.d ./app/display.o ./app/display.su ./app/gameoflife.cyclo ./app/gameoflife.d ./app/gameoflife.o ./app/gameoflife.su ./app/main.cyclo ./app/main.d ./app/main.o ./app/main.su ./app/menu.cyclo ./app/menu.d ./app/menu.o ./app/menu.su
+	-$(RM) ./app/actions.cyclo ./app/actions.d ./app/actions.o ./app/actions.su ./app/button.cyclo ./app/button.d ./app/button.o ./app/button.su ./app/display.cyclo ./app/display.d ./app/display.o ./app/display.su ./app/gameoflife.cyclo ./app/gameoflife.d ./app/gameoflife.o ./app/gameoflife.su ./app/main.cyclo ./app/main.d ./app/main.o ./app/main.su ./app/menu.cyclo ./app/menu.d ./app/menu.o ./app/menu.su ./app/test.cyclo ./app/test.d ./app/test.o ./app/test.su
 
 .PHONY: clean-app
 

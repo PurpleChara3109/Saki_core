@@ -1,0 +1,271 @@
+\doxysection{actions.\+h File Reference}
+\hypertarget{actions_8h}{}\label{actions_8h}\index{actions.h@{actions.h}}
+{\ttfamily \#include "{}button.\+h"{}}\newline
+{\ttfamily \#include "{}gameoflife.\+h"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for actions.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{actions_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{actions_8h_aa8b6f82aed0ab9eeab272190e575b9e2}{action\+\_\+play\+\_\+pause}} (void)
+\item 
+void \mbox{\hyperlink{actions_8h_a937f4a9ade0254c1ff7aea7a682c2cd0}{action\+\_\+clear\+\_\+grid}} (void)
+\item 
+void \mbox{\hyperlink{actions_8h_ac42ebabda5e72c36da2608877b518bfe}{action\+\_\+save\+\_\+grid}} (void)
+\begin{DoxyCompactList}\small\item\em Sauvegarde la grille actuelle dans la mémoire Flash. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{actions_8h_aadb3b0ea37cd389d4dcea88c55ca9124}{action\+\_\+open\+\_\+menu}} (void)
+\item 
+void \mbox{\hyperlink{actions_8h_a49ce93778b87ac9406cebf960dae7099}{action\+\_\+open\+\_\+patterns\+\_\+menu}} (void)
+\item 
+void \mbox{\hyperlink{actions_8h_abeb13db295adea19da4a09456f58d061}{action\+\_\+create\+\_\+patterns}} (void)
+\item 
+void \mbox{\hyperlink{actions_8h_abf57de03c7fc2add00bdc559b90f2e62}{action\+\_\+load\+\_\+grid}} (void)
+\begin{DoxyCompactList}\small\item\em Charge la grille depuis la mémoire Flash. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{actions_8h_a01612a351b76c9214cc7a6133c587081}{action\+\_\+to\+\_\+do}} (\mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\+\_\+actions\+\_\+e}} \mbox{\hyperlink{gameoflife_8c_a9b2291ad5bd77e04a695e459dd77a344}{action}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structgrid__t}{grid\+\_\+t}} \mbox{\hyperlink{actions_8h_aab090ad7eb6b25c2100d8e2328a7e5c7}{grid0}}
+\begin{DoxyCompactList}\small\item\em Gère les différentes actions disponibles et effectuées par l\textquotesingle{}utilisateur. @\+Author \+: Valéry et Neïssa. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{actions_8h_af3d178b460e3ce9eb4bacd7bfa0bc024}{cooldown\+\_\+after\+\_\+menu}}
+\item 
+\mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91}{pattern\+\_\+e}} \mbox{\hyperlink{actions_8h_a0d4413388976a9ff0f953cdc10c48a27}{selected\+\_\+pattern}}
+\item 
+volatile bool \mbox{\hyperlink{actions_8h_a0fdecda1ad03dfe9115700dcdd964976}{is\+\_\+paused}}
+\item 
+volatile bool \mbox{\hyperlink{actions_8h_aeac3fa565c8e7503faaeda44618bd4b4}{in\+\_\+menu}}
+\item 
+volatile bool \mbox{\hyperlink{actions_8h_a030a818574f03b44c17101df9e60573c}{in\+\_\+pattern\+\_\+menu}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{actions_8h_a937f4a9ade0254c1ff7aea7a682c2cd0}\label{actions_8h_a937f4a9ade0254c1ff7aea7a682c2cd0} 
+\index{actions.h@{actions.h}!action\_clear\_grid@{action\_clear\_grid}}
+\index{action\_clear\_grid@{action\_clear\_grid}!actions.h@{actions.h}}
+\doxysubsubsection{\texorpdfstring{action\_clear\_grid()}{action\_clear\_grid()}}
+{\footnotesize\ttfamily void action\+\_\+clear\+\_\+grid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Action \+: efface toutes les cellules de la grille Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8h_a937f4a9ade0254c1ff7aea7a682c2cd0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8h_a937f4a9ade0254c1ff7aea7a682c2cd0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8h_abeb13db295adea19da4a09456f58d061}\label{actions_8h_abeb13db295adea19da4a09456f58d061} 
+\index{actions.h@{actions.h}!action\_create\_patterns@{action\_create\_patterns}}
+\index{action\_create\_patterns@{action\_create\_patterns}!actions.h@{actions.h}}
+\doxysubsubsection{\texorpdfstring{action\_create\_patterns()}{action\_create\_patterns()}}
+{\footnotesize\ttfamily void action\+\_\+create\+\_\+patterns (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Action \+: permet de choisir un pattern à afficher Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8h_abeb13db295adea19da4a09456f58d061_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8h_abeb13db295adea19da4a09456f58d061_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8h_abf57de03c7fc2add00bdc559b90f2e62}\label{actions_8h_abf57de03c7fc2add00bdc559b90f2e62} 
+\index{actions.h@{actions.h}!action\_load\_grid@{action\_load\_grid}}
+\index{action\_load\_grid@{action\_load\_grid}!actions.h@{actions.h}}
+\doxysubsubsection{\texorpdfstring{action\_load\_grid()}{action\_load\_grid()}}
+{\footnotesize\ttfamily void action\+\_\+load\+\_\+grid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Charge la grille depuis la mémoire Flash. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{actions_8h_abf57de03c7fc2add00bdc559b90f2e62_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8h_aadb3b0ea37cd389d4dcea88c55ca9124}\label{actions_8h_aadb3b0ea37cd389d4dcea88c55ca9124} 
+\index{actions.h@{actions.h}!action\_open\_menu@{action\_open\_menu}}
+\index{action\_open\_menu@{action\_open\_menu}!actions.h@{actions.h}}
+\doxysubsubsection{\texorpdfstring{action\_open\_menu()}{action\_open\_menu()}}
+{\footnotesize\ttfamily void action\+\_\+open\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Action \+: ouvre le menu Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8h_aadb3b0ea37cd389d4dcea88c55ca9124_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8h_aadb3b0ea37cd389d4dcea88c55ca9124_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8h_a49ce93778b87ac9406cebf960dae7099}\label{actions_8h_a49ce93778b87ac9406cebf960dae7099} 
+\index{actions.h@{actions.h}!action\_open\_patterns\_menu@{action\_open\_patterns\_menu}}
+\index{action\_open\_patterns\_menu@{action\_open\_patterns\_menu}!actions.h@{actions.h}}
+\doxysubsubsection{\texorpdfstring{action\_open\_patterns\_menu()}{action\_open\_patterns\_menu()}}
+{\footnotesize\ttfamily void action\+\_\+open\+\_\+patterns\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Pour choisir un pattern précis ! Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8h_a49ce93778b87ac9406cebf960dae7099_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8h_a49ce93778b87ac9406cebf960dae7099_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8h_aa8b6f82aed0ab9eeab272190e575b9e2}\label{actions_8h_aa8b6f82aed0ab9eeab272190e575b9e2} 
+\index{actions.h@{actions.h}!action\_play\_pause@{action\_play\_pause}}
+\index{action\_play\_pause@{action\_play\_pause}!actions.h@{actions.h}}
+\doxysubsubsection{\texorpdfstring{action\_play\_pause()}{action\_play\_pause()}}
+{\footnotesize\ttfamily void action\+\_\+play\+\_\+pause (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Action \+: jouer / mettre en pause la simulation Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8h_aa8b6f82aed0ab9eeab272190e575b9e2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8h_aa8b6f82aed0ab9eeab272190e575b9e2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8h_ac42ebabda5e72c36da2608877b518bfe}\label{actions_8h_ac42ebabda5e72c36da2608877b518bfe} 
+\index{actions.h@{actions.h}!action\_save\_grid@{action\_save\_grid}}
+\index{action\_save\_grid@{action\_save\_grid}!actions.h@{actions.h}}
+\doxysubsubsection{\texorpdfstring{action\_save\_grid()}{action\_save\_grid()}}
+{\footnotesize\ttfamily void action\+\_\+save\+\_\+grid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Sauvegarde la grille actuelle dans la mémoire Flash. 
+
+VÉ\+RIFIEZ IMPÉ\+RATIVEMENT que l\textquotesingle{}adresse 0x0801\+C000 et les 3 pages suivantes (0x0801\+C000 à 0x0801\+E7\+FF) sont libres de tout code de votre firmware. UN EFFACEMENT ICI PEUT CORROMPRE VOTRE MICROCONTRÔ\+LEUR. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{actions_8h_ac42ebabda5e72c36da2608877b518bfe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8h_ac42ebabda5e72c36da2608877b518bfe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8h_a01612a351b76c9214cc7a6133c587081}\label{actions_8h_a01612a351b76c9214cc7a6133c587081} 
+\index{actions.h@{actions.h}!action\_to\_do@{action\_to\_do}}
+\index{action\_to\_do@{action\_to\_do}!actions.h@{actions.h}}
+\doxysubsubsection{\texorpdfstring{action\_to\_do()}{action\_to\_do()}}
+{\footnotesize\ttfamily void action\+\_\+to\+\_\+do (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\+\_\+actions\+\_\+e}}}]{action }\end{DoxyParamCaption})}
+
+Sélectionne l\textquotesingle{}action à effectuer. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8h_a01612a351b76c9214cc7a6133c587081_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8h_a01612a351b76c9214cc7a6133c587081_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{actions_8h_af3d178b460e3ce9eb4bacd7bfa0bc024}\label{actions_8h_af3d178b460e3ce9eb4bacd7bfa0bc024} 
+\index{actions.h@{actions.h}!cooldown\_after\_menu@{cooldown\_after\_menu}}
+\index{cooldown\_after\_menu@{cooldown\_after\_menu}!actions.h@{actions.h}}
+\doxysubsubsection{\texorpdfstring{cooldown\_after\_menu}{cooldown\_after\_menu}}
+{\footnotesize\ttfamily uint8\+\_\+t cooldown\+\_\+after\+\_\+menu\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{actions_8h_aab090ad7eb6b25c2100d8e2328a7e5c7}\label{actions_8h_aab090ad7eb6b25c2100d8e2328a7e5c7} 
+\index{actions.h@{actions.h}!grid0@{grid0}}
+\index{grid0@{grid0}!actions.h@{actions.h}}
+\doxysubsubsection{\texorpdfstring{grid0}{grid0}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgrid__t}{grid\+\_\+t}} grid0\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Gère les différentes actions disponibles et effectuées par l\textquotesingle{}utilisateur. @\+Author \+: Valéry et Neïssa. 
+
+\Hypertarget{actions_8h_aeac3fa565c8e7503faaeda44618bd4b4}\label{actions_8h_aeac3fa565c8e7503faaeda44618bd4b4} 
+\index{actions.h@{actions.h}!in\_menu@{in\_menu}}
+\index{in\_menu@{in\_menu}!actions.h@{actions.h}}
+\doxysubsubsection{\texorpdfstring{in\_menu}{in\_menu}}
+{\footnotesize\ttfamily volatile bool in\+\_\+menu\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{actions_8h_a030a818574f03b44c17101df9e60573c}\label{actions_8h_a030a818574f03b44c17101df9e60573c} 
+\index{actions.h@{actions.h}!in\_pattern\_menu@{in\_pattern\_menu}}
+\index{in\_pattern\_menu@{in\_pattern\_menu}!actions.h@{actions.h}}
+\doxysubsubsection{\texorpdfstring{in\_pattern\_menu}{in\_pattern\_menu}}
+{\footnotesize\ttfamily volatile bool in\+\_\+pattern\+\_\+menu\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{actions_8h_a0fdecda1ad03dfe9115700dcdd964976}\label{actions_8h_a0fdecda1ad03dfe9115700dcdd964976} 
+\index{actions.h@{actions.h}!is\_paused@{is\_paused}}
+\index{is\_paused@{is\_paused}!actions.h@{actions.h}}
+\doxysubsubsection{\texorpdfstring{is\_paused}{is\_paused}}
+{\footnotesize\ttfamily volatile bool is\+\_\+paused\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{actions_8h_a0d4413388976a9ff0f953cdc10c48a27}\label{actions_8h_a0d4413388976a9ff0f953cdc10c48a27} 
+\index{actions.h@{actions.h}!selected\_pattern@{selected\_pattern}}
+\index{selected\_pattern@{selected\_pattern}!actions.h@{actions.h}}
+\doxysubsubsection{\texorpdfstring{selected\_pattern}{selected\_pattern}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91}{pattern\+\_\+e}} selected\+\_\+pattern\hspace{0.3cm}{\ttfamily [extern]}}
+

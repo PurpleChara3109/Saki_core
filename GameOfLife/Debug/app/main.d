@@ -1,4 +1,4 @@
-app/main.o: ../app/main.c ../app/gameoflife.h \
+app/main.o: ../app/main.c ../app/gameoflife.h ../app/config.h \
  ../drivers/stm32g4xx_hal/Inc/stm32g4xx_hal.h \
  ../core/Inc/stm32g4xx_hal_conf.h \
  ../drivers/stm32g4xx_hal/Inc/stm32g4xx_hal_rcc.h \
@@ -45,8 +45,10 @@ app/main.o: ../app/main.c ../app/gameoflife.h \
  ../drivers/bsp/stm32g4_uart.h ../drivers/bsp/stm32g4_gpio.h \
  ../drivers/bsp/stm32g4_systick.h \
  ../drivers/bsp/TFT_ili9341/stm32g4_ili9341.h \
- ../drivers/bsp/TFT_ili9341/stm32g4_fonts.h
+ ../drivers/bsp/TFT_ili9341/stm32g4_fonts.h ../app/test.h \
+ ../drivers/bsp/stm32g4_flash.h ../drivers/bsp/stm32g4_sys.h
 ../app/gameoflife.h:
+../app/config.h:
 ../drivers/stm32g4xx_hal/Inc/stm32g4xx_hal.h:
 ../core/Inc/stm32g4xx_hal_conf.h:
 ../drivers/stm32g4xx_hal/Inc/stm32g4xx_hal_rcc.h:
@@ -97,3 +99,6 @@ app/main.o: ../app/main.c ../app/gameoflife.h \
 ../drivers/bsp/stm32g4_systick.h:
 ../drivers/bsp/TFT_ili9341/stm32g4_ili9341.h:
 ../drivers/bsp/TFT_ili9341/stm32g4_fonts.h:
+../app/test.h:
+../drivers/bsp/stm32g4_flash.h:
+../drivers/bsp/stm32g4_sys.h:

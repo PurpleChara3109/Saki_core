@@ -1,0 +1,155 @@
+\doxysection{button.\+h File Reference}
+\hypertarget{button_8h}{}\label{button_8h}\index{button.h@{button.h}}
+{\ttfamily \#include "{}stm32g4xx\+\_\+hal.\+h"{}}\newline
+Include dependency graph for button.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{button_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{button_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} \{ \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066aa4a7fed0d1e981a5782cc5cf137e5e9bb}{BUTTON\+\_\+\+NO\+\_\+\+EVENT}}
+, \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066aabf9fa6151b11929b7b4b0411a42a3945}{BUTTON\+\_\+\+PRESS\+\_\+\+EVENT}}
+, \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066aab2e2a0c9b50dde42cab187a9b1a61f27}{BUTTON\+\_\+\+RELEASE\+\_\+\+EVENT}}
+ \}
+\item 
+enum \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\+\_\+actions\+\_\+e}} \{ \newline
+\mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382faeabb516226f3df30c332c998da773f56db}{ACTION\+\_\+\+NONE}}
+, \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382faea96da8b132ccc1f8d68d1aab1f78eae1a}{ACTION\+\_\+\+PLAY\+\_\+\+PAUSE}}
+, \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382faea3f9901bae9fabe55a976ed41411c050e}{ACTION\+\_\+\+CLEAR\+\_\+\+GRID}}
+, \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382faea4f0efe5baa600b12389e1181e3435dd5}{ACTION\+\_\+\+SAVE\+\_\+\+GRID}}
+, \newline
+\mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382faeac3e6af043c7f36458aab562e069283c0}{ACTION\+\_\+\+OPEN\+\_\+\+MENU}}
+, \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382faea6150ff6f90d21ea65b934a8d19313699}{ACTION\+\_\+\+SELECT\+\_\+\+PATTERNS}}
+, \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382faea5240433babcb6ce55c1d6eb2887eaba2}{ACTION\+\_\+\+CREATE\+\_\+\+PATTERNS}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{button_8h_a8465aa4d2944eabead377f59a44ab073}{BUTTONS\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{button_8h_aa8fadb4fd0d08d6dc3b728ab782bcb8d}{BUTTONS\+\_\+update}} (\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} \texorpdfstring{$\ast$}{*}button\+\_\+down\+\_\+event, \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} \texorpdfstring{$\ast$}{*}button\+\_\+center\+\_\+event)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{button_8h_a8186b1c215dd5256a5132e71c4aa9ae9}{BUTTON\+\_\+down\+\_\+read}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{button_8h_a7e21e93b230faf0b120491cb9db219ed}{BUTTON\+\_\+center\+\_\+read}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{button_8h_a55921af376e04c16ef2e31ebfbbd066a}\label{button_8h_a55921af376e04c16ef2e31ebfbbd066a} 
+\index{button.h@{button.h}!button\_e@{button\_e}}
+\index{button\_e@{button\_e}!button.h@{button.h}}
+\doxysubsubsection{\texorpdfstring{button\_e}{button\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_NO\_EVENT@{BUTTON\_NO\_EVENT}!button.h@{button.h}}\index{button.h@{button.h}!BUTTON\_NO\_EVENT@{BUTTON\_NO\_EVENT}}}\Hypertarget{button_8h_a55921af376e04c16ef2e31ebfbbd066aa4a7fed0d1e981a5782cc5cf137e5e9bb}\label{button_8h_a55921af376e04c16ef2e31ebfbbd066aa4a7fed0d1e981a5782cc5cf137e5e9bb} 
+BUTTON\+\_\+\+NO\+\_\+\+EVENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_PRESS\_EVENT@{BUTTON\_PRESS\_EVENT}!button.h@{button.h}}\index{button.h@{button.h}!BUTTON\_PRESS\_EVENT@{BUTTON\_PRESS\_EVENT}}}\Hypertarget{button_8h_a55921af376e04c16ef2e31ebfbbd066aabf9fa6151b11929b7b4b0411a42a3945}\label{button_8h_a55921af376e04c16ef2e31ebfbbd066aabf9fa6151b11929b7b4b0411a42a3945} 
+BUTTON\+\_\+\+PRESS\+\_\+\+EVENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUTTON\_RELEASE\_EVENT@{BUTTON\_RELEASE\_EVENT}!button.h@{button.h}}\index{button.h@{button.h}!BUTTON\_RELEASE\_EVENT@{BUTTON\_RELEASE\_EVENT}}}\Hypertarget{button_8h_a55921af376e04c16ef2e31ebfbbd066aab2e2a0c9b50dde42cab187a9b1a61f27}\label{button_8h_a55921af376e04c16ef2e31ebfbbd066aab2e2a0c9b50dde42cab187a9b1a61f27} 
+BUTTON\+\_\+\+RELEASE\+\_\+\+EVENT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{button_8h_a0c0a240d869c5296e83d505383382fae}\label{button_8h_a0c0a240d869c5296e83d505383382fae} 
+\index{button.h@{button.h}!user\_actions\_e@{user\_actions\_e}}
+\index{user\_actions\_e@{user\_actions\_e}!button.h@{button.h}}
+\doxysubsubsection{\texorpdfstring{user\_actions\_e}{user\_actions\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\+\_\+actions\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_NONE@{ACTION\_NONE}!button.h@{button.h}}\index{button.h@{button.h}!ACTION\_NONE@{ACTION\_NONE}}}\Hypertarget{button_8h_a0c0a240d869c5296e83d505383382faeabb516226f3df30c332c998da773f56db}\label{button_8h_a0c0a240d869c5296e83d505383382faeabb516226f3df30c332c998da773f56db} 
+ACTION\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_PLAY\_PAUSE@{ACTION\_PLAY\_PAUSE}!button.h@{button.h}}\index{button.h@{button.h}!ACTION\_PLAY\_PAUSE@{ACTION\_PLAY\_PAUSE}}}\Hypertarget{button_8h_a0c0a240d869c5296e83d505383382faea96da8b132ccc1f8d68d1aab1f78eae1a}\label{button_8h_a0c0a240d869c5296e83d505383382faea96da8b132ccc1f8d68d1aab1f78eae1a} 
+ACTION\+\_\+\+PLAY\+\_\+\+PAUSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_CLEAR\_GRID@{ACTION\_CLEAR\_GRID}!button.h@{button.h}}\index{button.h@{button.h}!ACTION\_CLEAR\_GRID@{ACTION\_CLEAR\_GRID}}}\Hypertarget{button_8h_a0c0a240d869c5296e83d505383382faea3f9901bae9fabe55a976ed41411c050e}\label{button_8h_a0c0a240d869c5296e83d505383382faea3f9901bae9fabe55a976ed41411c050e} 
+ACTION\+\_\+\+CLEAR\+\_\+\+GRID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_SAVE\_GRID@{ACTION\_SAVE\_GRID}!button.h@{button.h}}\index{button.h@{button.h}!ACTION\_SAVE\_GRID@{ACTION\_SAVE\_GRID}}}\Hypertarget{button_8h_a0c0a240d869c5296e83d505383382faea4f0efe5baa600b12389e1181e3435dd5}\label{button_8h_a0c0a240d869c5296e83d505383382faea4f0efe5baa600b12389e1181e3435dd5} 
+ACTION\+\_\+\+SAVE\+\_\+\+GRID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_OPEN\_MENU@{ACTION\_OPEN\_MENU}!button.h@{button.h}}\index{button.h@{button.h}!ACTION\_OPEN\_MENU@{ACTION\_OPEN\_MENU}}}\Hypertarget{button_8h_a0c0a240d869c5296e83d505383382faeac3e6af043c7f36458aab562e069283c0}\label{button_8h_a0c0a240d869c5296e83d505383382faeac3e6af043c7f36458aab562e069283c0} 
+ACTION\+\_\+\+OPEN\+\_\+\+MENU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_SELECT\_PATTERNS@{ACTION\_SELECT\_PATTERNS}!button.h@{button.h}}\index{button.h@{button.h}!ACTION\_SELECT\_PATTERNS@{ACTION\_SELECT\_PATTERNS}}}\Hypertarget{button_8h_a0c0a240d869c5296e83d505383382faea6150ff6f90d21ea65b934a8d19313699}\label{button_8h_a0c0a240d869c5296e83d505383382faea6150ff6f90d21ea65b934a8d19313699} 
+ACTION\+\_\+\+SELECT\+\_\+\+PATTERNS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_CREATE\_PATTERNS@{ACTION\_CREATE\_PATTERNS}!button.h@{button.h}}\index{button.h@{button.h}!ACTION\_CREATE\_PATTERNS@{ACTION\_CREATE\_PATTERNS}}}\Hypertarget{button_8h_a0c0a240d869c5296e83d505383382faea5240433babcb6ce55c1d6eb2887eaba2}\label{button_8h_a0c0a240d869c5296e83d505383382faea5240433babcb6ce55c1d6eb2887eaba2} 
+ACTION\+\_\+\+CREATE\+\_\+\+PATTERNS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{button_8h_a7e21e93b230faf0b120491cb9db219ed}\label{button_8h_a7e21e93b230faf0b120491cb9db219ed} 
+\index{button.h@{button.h}!BUTTON\_center\_read@{BUTTON\_center\_read}}
+\index{BUTTON\_center\_read@{BUTTON\_center\_read}!button.h@{button.h}}
+\doxysubsubsection{\texorpdfstring{BUTTON\_center\_read()}{BUTTON\_center\_read()}}
+{\footnotesize\ttfamily uint8\+\_\+t BUTTON\+\_\+center\+\_\+read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{button_8h_a8186b1c215dd5256a5132e71c4aa9ae9}\label{button_8h_a8186b1c215dd5256a5132e71c4aa9ae9} 
+\index{button.h@{button.h}!BUTTON\_down\_read@{BUTTON\_down\_read}}
+\index{BUTTON\_down\_read@{BUTTON\_down\_read}!button.h@{button.h}}
+\doxysubsubsection{\texorpdfstring{BUTTON\_down\_read()}{BUTTON\_down\_read()}}
+{\footnotesize\ttfamily uint8\+\_\+t BUTTON\+\_\+down\+\_\+read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{button_8h_a8465aa4d2944eabead377f59a44ab073}\label{button_8h_a8465aa4d2944eabead377f59a44ab073} 
+\index{button.h@{button.h}!BUTTONS\_init@{BUTTONS\_init}}
+\index{BUTTONS\_init@{BUTTONS\_init}!button.h@{button.h}}
+\doxysubsubsection{\texorpdfstring{BUTTONS\_init()}{BUTTONS\_init()}}
+{\footnotesize\ttfamily void BUTTONS\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{button_8h_a8465aa4d2944eabead377f59a44ab073_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{button_8h_a8465aa4d2944eabead377f59a44ab073_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{button_8h_aa8fadb4fd0d08d6dc3b728ab782bcb8d}\label{button_8h_aa8fadb4fd0d08d6dc3b728ab782bcb8d} 
+\index{button.h@{button.h}!BUTTONS\_update@{BUTTONS\_update}}
+\index{BUTTONS\_update@{BUTTONS\_update}!button.h@{button.h}}
+\doxysubsubsection{\texorpdfstring{BUTTONS\_update()}{BUTTONS\_update()}}
+{\footnotesize\ttfamily void BUTTONS\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} \texorpdfstring{$\ast$}{*}}]{button\+\_\+down\+\_\+event,  }\item[{\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} \texorpdfstring{$\ast$}{*}}]{button\+\_\+center\+\_\+event }\end{DoxyParamCaption})}
+
+La fonction sert à dire pour chaque bouton \+: “est-\/ce qu’il vient d’être pressé ? relâché ? ou rien du tout ?” Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{button_8h_aa8fadb4fd0d08d6dc3b728ab782bcb8d_icgraph}
+\end{center}
+\end{figure}

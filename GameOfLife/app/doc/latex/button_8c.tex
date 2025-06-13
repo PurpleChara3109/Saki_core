@@ -1,0 +1,126 @@
+\doxysection{button.\+c File Reference}
+\hypertarget{button_8c}{}\label{button_8c}\index{button.c@{button.c}}
+{\ttfamily \#include "{}stm32g4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}stm32g4\+\_\+systick.\+h"{}}\newline
+{\ttfamily \#include "{}button.\+h"{}}\newline
+{\ttfamily \#include "{}actions.\+h"{}}\newline
+{\ttfamily \#include "{}stm32g4\+\_\+gpio.\+h"{}}\newline
+Include dependency graph for button.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{button_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{button_8c_a2730f5e9c3052df4e34290340ede48ca}{GPIO\+\_\+\+BUTTON\+\_\+\+DOWN}}~GPIOA
+\item 
+\#define \mbox{\hyperlink{button_8c_a4d57319f57df379c1271fbde49803cf3}{PIN\+\_\+\+BUTTON\+\_\+\+DOWN}}~GPIO\+\_\+\+PIN\+\_\+9
+\item 
+\#define \mbox{\hyperlink{button_8c_ab469ef4ee2680f5b4de1488227736637}{GPIO\+\_\+\+BUTTON\+\_\+\+CENTER}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{button_8c_acef9150f4ecdd10fe3ade55bd8532bc7}{PIN\+\_\+\+BUTTON\+\_\+\+CENTER}}~GPIO\+\_\+\+PIN\+\_\+0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{button_8c_a338ccada0b368bdf1c0981df34ba94b3}{BUTTONS\+\_\+process\+\_\+ms}} (void)
+\item 
+void \mbox{\hyperlink{button_8c_a8465aa4d2944eabead377f59a44ab073}{BUTTONS\+\_\+init}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{button_8c_a8186b1c215dd5256a5132e71c4aa9ae9}{BUTTON\+\_\+down\+\_\+read}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{button_8c_a7e21e93b230faf0b120491cb9db219ed}{BUTTON\+\_\+center\+\_\+read}} (void)
+\item 
+void \mbox{\hyperlink{button_8c_aa8fadb4fd0d08d6dc3b728ab782bcb8d}{BUTTONS\+\_\+update}} (\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} \texorpdfstring{$\ast$}{*}button\+\_\+down\+\_\+event, \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} \texorpdfstring{$\ast$}{*}button\+\_\+center\+\_\+event)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{button_8c_ab469ef4ee2680f5b4de1488227736637}\label{button_8c_ab469ef4ee2680f5b4de1488227736637} 
+\index{button.c@{button.c}!GPIO\_BUTTON\_CENTER@{GPIO\_BUTTON\_CENTER}}
+\index{GPIO\_BUTTON\_CENTER@{GPIO\_BUTTON\_CENTER}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_BUTTON\_CENTER}{GPIO\_BUTTON\_CENTER}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+BUTTON\+\_\+\+CENTER~GPIOB}
+
+\Hypertarget{button_8c_a2730f5e9c3052df4e34290340ede48ca}\label{button_8c_a2730f5e9c3052df4e34290340ede48ca} 
+\index{button.c@{button.c}!GPIO\_BUTTON\_DOWN@{GPIO\_BUTTON\_DOWN}}
+\index{GPIO\_BUTTON\_DOWN@{GPIO\_BUTTON\_DOWN}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_BUTTON\_DOWN}{GPIO\_BUTTON\_DOWN}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+BUTTON\+\_\+\+DOWN~GPIOA}
+
+\Hypertarget{button_8c_acef9150f4ecdd10fe3ade55bd8532bc7}\label{button_8c_acef9150f4ecdd10fe3ade55bd8532bc7} 
+\index{button.c@{button.c}!PIN\_BUTTON\_CENTER@{PIN\_BUTTON\_CENTER}}
+\index{PIN\_BUTTON\_CENTER@{PIN\_BUTTON\_CENTER}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_BUTTON\_CENTER}{PIN\_BUTTON\_CENTER}}
+{\footnotesize\ttfamily \#define PIN\+\_\+\+BUTTON\+\_\+\+CENTER~GPIO\+\_\+\+PIN\+\_\+0}
+
+\Hypertarget{button_8c_a4d57319f57df379c1271fbde49803cf3}\label{button_8c_a4d57319f57df379c1271fbde49803cf3} 
+\index{button.c@{button.c}!PIN\_BUTTON\_DOWN@{PIN\_BUTTON\_DOWN}}
+\index{PIN\_BUTTON\_DOWN@{PIN\_BUTTON\_DOWN}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_BUTTON\_DOWN}{PIN\_BUTTON\_DOWN}}
+{\footnotesize\ttfamily \#define PIN\+\_\+\+BUTTON\+\_\+\+DOWN~GPIO\+\_\+\+PIN\+\_\+9}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{button_8c_a7e21e93b230faf0b120491cb9db219ed}\label{button_8c_a7e21e93b230faf0b120491cb9db219ed} 
+\index{button.c@{button.c}!BUTTON\_center\_read@{BUTTON\_center\_read}}
+\index{BUTTON\_center\_read@{BUTTON\_center\_read}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{BUTTON\_center\_read()}{BUTTON\_center\_read()}}
+{\footnotesize\ttfamily uint8\+\_\+t BUTTON\+\_\+center\+\_\+read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{button_8c_a8186b1c215dd5256a5132e71c4aa9ae9}\label{button_8c_a8186b1c215dd5256a5132e71c4aa9ae9} 
+\index{button.c@{button.c}!BUTTON\_down\_read@{BUTTON\_down\_read}}
+\index{BUTTON\_down\_read@{BUTTON\_down\_read}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{BUTTON\_down\_read()}{BUTTON\_down\_read()}}
+{\footnotesize\ttfamily uint8\+\_\+t BUTTON\+\_\+down\+\_\+read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{button_8c_a8465aa4d2944eabead377f59a44ab073}\label{button_8c_a8465aa4d2944eabead377f59a44ab073} 
+\index{button.c@{button.c}!BUTTONS\_init@{BUTTONS\_init}}
+\index{BUTTONS\_init@{BUTTONS\_init}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{BUTTONS\_init()}{BUTTONS\_init()}}
+{\footnotesize\ttfamily void BUTTONS\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{button_8c_a8465aa4d2944eabead377f59a44ab073_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{button_8c_a8465aa4d2944eabead377f59a44ab073_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{button_8c_a338ccada0b368bdf1c0981df34ba94b3}\label{button_8c_a338ccada0b368bdf1c0981df34ba94b3} 
+\index{button.c@{button.c}!BUTTONS\_process\_ms@{BUTTONS\_process\_ms}}
+\index{BUTTONS\_process\_ms@{BUTTONS\_process\_ms}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{BUTTONS\_process\_ms()}{BUTTONS\_process\_ms()}}
+{\footnotesize\ttfamily void BUTTONS\+\_\+process\+\_\+ms (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{button_8c_a338ccada0b368bdf1c0981df34ba94b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{button_8c_aa8fadb4fd0d08d6dc3b728ab782bcb8d}\label{button_8c_aa8fadb4fd0d08d6dc3b728ab782bcb8d} 
+\index{button.c@{button.c}!BUTTONS\_update@{BUTTONS\_update}}
+\index{BUTTONS\_update@{BUTTONS\_update}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{BUTTONS\_update()}{BUTTONS\_update()}}
+{\footnotesize\ttfamily void BUTTONS\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} \texorpdfstring{$\ast$}{*}}]{button\+\_\+down\+\_\+event,  }\item[{\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} \texorpdfstring{$\ast$}{*}}]{button\+\_\+center\+\_\+event }\end{DoxyParamCaption})}
+
+La fonction sert à dire pour chaque bouton \+: “est-\/ce qu’il vient d’être pressé ? relâché ? ou rien du tout ?” Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{button_8c_aa8fadb4fd0d08d6dc3b728ab782bcb8d_icgraph}
+\end{center}
+\end{figure}

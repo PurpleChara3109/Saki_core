@@ -20,6 +20,8 @@
 #define LED_GREEN_PIN 			GPIO_PIN_8
 #define LED_GREEN_GPIO 			GPIOB
 
+#define ACTIVE_TEST				0		// For the test mode
+
 #define UART2_ON_PA3_PA2
 #define UART1_ON_PB7_PB6
 

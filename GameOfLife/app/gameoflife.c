@@ -1,8 +1,12 @@
-/*
+                                                                                                                                                 /*
  * sokoban.c
  *
  *  Created on: Mar 11, 2024
  *      Author: Nirgal
+ */
+
+/**
+ * @brief Fonction principale qui gère le cadencement et le fonctionne de l'application.
  */
 
 #include "gameoflife.h"
@@ -10,6 +14,7 @@
 #include "button.h"
 #include "actions.h"
 #include "display.h"
+#include "menu.h"
 #include "stm32g4_systick.h"
 #include "TFT_ili9341/stm32g4_xpt2046.h"
 #include "TFT_ili9341/stm32g4_ili9341.h"
@@ -19,40 +24,44 @@
 #define NB_LEVELS 11
 #define GENERATION_PERIOD_MS 100
 
-//Private types
-typedef enum
-{
-	PATTERN_BOX,
-	PATTERN_BEEHIVE,
-	PATTERN_TOAD,
-	PATTERN_SHIP,
-	PATTERN_GLIDER,
-	PATTERN_QUEEN_BEE_SHUTTLE,
-	PATTERN_PULSAR,
-	PATTERN_BLINKER,
-	PATTERN_PENTADECATHLON,
-	PATTERN_GLIDER_GUN,
-	PATTERN_LIGHT_WEIGHT_SPACESHIP,
-	PATTERN_MIDDLE_WEIGHT_SPACESHIP,
-	PATTERN_HEAVY_WEIGHT_SPACESHIP,
-	PATTERN_NB
-}pattern_e;
-
-//Private variables (all variable must be private ^^)
-
- grid_t grid0;
+//Variables privées types
 static grid_t grid1;
 static volatile bool flag_generation = false; // Détermine si l'on doit passer à la génération suivante
-volatile user_actions_e action;
-static bool just_entered_menu = false;
+static button_e down, center;
+static bool flag_first_enter;
+
+// Variables publiques
+grid_t grid0;
+
+user_actions_e action;
+volatile bool is_paused;
+volatile bool in_menu;
+volatile bool in_pattern_menu;
 uint8_t cooldown_after_menu = 0;
+
+typedef enum{
+	GOF_INIT,
+	GOF_START,
+	GOF_IN_MENU,
+	GOF_IN_PATTERN_MENU,
+	GOF_PLAY,
+	GOF_PAUSE,
+	GOF_SAVE
+} state_game;
 
 //Prototypes of private functions
 static void GAMEOFLIFE_process_ms(void);
 static void GAMEOFLIFE_next_generation(grid_t * grid_prev, grid_t * grid_next);
+static void GAMEOFLIFE_touchscreen(void);
 void GAMEOFLIFE_create_pattern(grid_t * grid, uint16_t x, uint16_t y, pattern_e pattern);
+static void GAMEOFLIFE_state_machine(void);
 
 //Public functions
+
+/**
+ * @brief Initialisation de notre Jeu de la vie.
+ * On initialise l'écran LCD, le fonctionnalité tactile, ainsi que les boutons.
+ */
 void GAMEOFLIFE_init(void)
 {
 	// Initialisation des éléments importants
@@ -60,6 +69,7 @@ void GAMEOFLIFE_init(void)
 	BUTTONS_init();		// initialisations des boutons utilisés
 	XPT2046_init();		// initialisation de l'écran tactil
 	BSP_systick_add_callback_function(GAMEOFLIFE_process_ms); // On appelle la fonction en paramètre à chaque instant
+
 	// Variables nécessaires pour la création d'un pattern (cf méthode GAMEOFLIFE_create_pattern)
 
 	grid_t *p = &grid0;
@@ -78,59 +88,35 @@ void GAMEOFLIFE_init(void)
 		}
 	}
 
-	// Après initialisation, on remplit notre grille avec un pattern en premier lieu
-
-//	GAMEOFLIFE_create_pattern(p, 10, 10, PATTERN_BOX);
-//	GAMEOFLIFE_create_pattern(p, 20, 10, PATTERN_BEEHIVE);
-//	GAMEOFLIFE_create_pattern(p, 30, 10, PATTERN_TOAD);
-//	GAMEOFLIFE_create_pattern(p, 40, 10, PATTERN_BLINKER);
-//	GAMEOFLIFE_create_pattern(p, 60, 50, PATTERN_SHIP);
-//	GAMEOFLIFE_create_pattern(p, 70, 50, PATTERN_PULSAR);
-//	GAMEOFLIFE_create_pattern(p, 10, 40, PATTERN_GLIDER_GUN);
-//	GAMEOFLIFE_create_pattern(p, 2, 2, PATTERN_LIGHT_WEIGHT_SPACESHIP);
-//	GAMEOFLIFE_create_pattern(p, 5, 10, PATTERN_MIDDLE_WEIGHT_SPACESHIP);
-//	GAMEOFLIFE_create_pattern(p, 5, 20, PATTERN_HEAVY_WEIGHT_SPACESHIP);
-
 	// Affichage en fournissant l'adresse de grid0
 
 	DISPLAY_refresh(p);
+
+	in_pattern_menu = false;
+	in_menu = false;
+	is_paused = true;
+	flag_first_enter = false;
 }
 
+/**
+ * Fonction matérialisant le processus principal de notre jeu.
+ */
 void GAMEOFLIFE_process_main(void)
 {
 	static bool toggle = false;
 	grid_t *grid_prev;
 	grid_t *grid_next;
 
-	button_e left, right, up, down, center;
-	BUTTONS_update(&left, &right, &up, &down, &center);
+	BUTTONS_update(&down, &center);
 
+	GAMEOFLIFE_state_machine();
 
-	// Pour le menu
-
-	if(center == BUTTON_PRESS_EVENT && !in_menu && cooldown_after_menu == 0)
+	if(flag_first_enter)
 	{
-	    action = ACTION_OPEN_MENU;
-	    action_to_do(action);
-	    action = ACTION_NONE;
-	    just_entered_menu = true;
-	}
-	if(in_menu)
-	{
-	    if(just_entered_menu){
-	        just_entered_menu = false;
-	    } else {
+		ILI9341_Puts(50, 100, "Conway's Game Of Life", &Font_11x18, ILI9341_COLOR_WHITE, ILI9341_COLOR_WHITE);
+		flag_first_enter = false;
 
-	        MENU_handle_input(down, center);
-	        action_to_do(action);
-	        action = ACTION_NONE;
-	    }
-	    if(in_menu){
-	    	return;
-	    }
 	}
-
-	GAMEOFLIFE_touchscreen();  // L'écran tactile
 
 	// Cadensement des générations
 	if(!is_paused && flag_generation){
@@ -152,146 +138,157 @@ void GAMEOFLIFE_process_main(void)
 
 		flag_generation = false;
 	}
-}
 
-
-//Private functions
-static void GAMEOFLIFE_process_ms(void) // Cette fonction ne s'implémente nulle part, elle sert juste
-// à lever le flag
-{
-	static uint8_t t_generation;
-
-//	On l'incrémente avec modulo -- cela sert à pouvoir effectuer une action cyclique
-
-	t_generation = (t_generation + 1) % GENERATION_PERIOD_MS;
-
-	if(t_generation == 0)
-		flag_generation = true; // On lève le flag pour passer à la génération suivante chaque 100ms
-
-	if (cooldown_after_menu > 0)
-	    cooldown_after_menu--;
-
+	if(!in_menu && !in_pattern_menu)
+	{
+		GAMEOFLIFE_touchscreen();  // L'écran tactile
+	}
 }
 
 /**
- *
+ * @brief Machine à états modélisant les états de notre projets.
  */
-static void GAMEOFLIFE_next_generation(grid_t * grid_prev, grid_t * grid_next)
+void GAMEOFLIFE_state_machine(void)
 {
-	// Variables la cellule actuelle, la suivante
-	// le nbre de cellule mortes/vivantes autour
+	static state_game current_state = GOF_INIT;
+	static state_game previous_state;
 
-//	uint8_t nbre_cell_dead = 0;
-	cell_e cell_main;
-	cell_e cell_next;
+	previous_state = current_state;
 
-	// On parcours dans un premier temps tout l'écran
+	switch(current_state)
+	{
+		case GOF_INIT:
+			ILI9341_Puts(50, 100, "Conway's Game Of Life", &Font_11x18, ILI9341_COLOR_PINK, ILI9341_COLOR_WHITE);
 
-	for(int x = 0; x < NB_COLUMN; x++){
-		for(int y = 0; y < NB_LINE; y++){
-			cell_main = grid_prev->cells[x][y]; // On récup la cellule actuelle, puis on analyse les 8
-			cell_next = cell_main;
-			//aux alentours en parcourant le carré
-			uint8_t nbre_cell_alive = 0;
-			for(int x_count = -1; x_count <= 1; x_count++){
-				for(int y_count = -1; y_count <= 1; y_count++){
-
-					if(x_count == 0 && y_count == 0)
-						continue;
-
-					// Je récupère ainsi la position de chaque cellue du carré, en ignorant celle du milieu
-					int x_neighbor = x + x_count;
-					int y_neighbor = y + y_count;
-
-					// On vérifie qu'on est toujours dans les limites de l'écran, sinon la cellule
-					// est ignorée ( la voisine, pas la cellule qu'on analyse)
-
-					if (x_neighbor >= 0 && x_neighbor < NB_COLUMN && y_neighbor >= 0 && y_neighbor < NB_LINE) {
-						if(grid_prev->cells[x_neighbor][y_neighbor] == CELL_ALIVE){
-							nbre_cell_alive++;
-						}
-//						}else{
-//							nbre_cell_dead++;
-//						}
-					}
-				}
+			if(center == BUTTON_PRESS_EVENT){
+				flag_first_enter = true;
+				current_state = GOF_START;
 			}
-			// Après avoir compté le nombre de cellule mortes, on applique les règles du jeu de la vie
-
-			if(cell_main == CELL_ALIVE){
-				if(nbre_cell_alive < 2){
-					cell_next = CELL_DEAD; // Mort par solitude (la pauvre)
-				}else if(nbre_cell_alive == 2 || nbre_cell_alive == 3){
-					cell_next = CELL_ALIVE; // vive la fraternitude
-				}else if(nbre_cell_alive > 3){
-					cell_next = CELL_DEAD; // Elle n'aime pas la populace
-				}
-			}else{
-				if(nbre_cell_alive == 3){
-					cell_next = CELL_ALIVE; // Résurrection par la FAME
-				}
+			break;
+		case GOF_START: // on gére tout ici
+            if (previous_state == GOF_INIT || previous_state == GOF_IN_MENU || previous_state == GOF_IN_PATTERN_MENU || previous_state == GOF_PAUSE)
+			{
+				in_pattern_menu = false;
+				in_menu = false;
+				is_paused = true;
 			}
 
-			// On actualise maintenant l'état de la cellule dans la grille suivante
-			grid_next->cells[x][y] = cell_next;
-		}
+//			if(previous_state == GOF_INIT)
+//			{
+//				flag_first_enter = false;
+//			}
+
+			if(center == BUTTON_PRESS_EVENT && cooldown_after_menu == 0)
+			{
+				action_open_menu(); // Appelle MENU_open() qui met in_menu_global à true
+				current_state = GOF_IN_MENU;
+				cooldown_after_menu = 10; // Empêche l'ouverture/fermeture rapide
+			}
+			break;
+		case GOF_IN_MENU:
+			if (previous_state != GOF_IN_MENU) { // Actions à l'entrée de l'état
+				MENU_open(); // Affiche le menu
+				is_paused = true;
+				in_menu = true;
+				in_pattern_menu = false; // S'assurer que le drapeau pattern est faux
+			}
+
+			MENU_handle_input(down, center); // Gère la navigation et sélection du menu
+
+			// Traitement de l'action sélectionnée
+			switch(action)
+			{
+				case ACTION_PLAY_PAUSE:
+					action_play_pause(); // Cela va inverser is_paused_global
+					current_state = is_paused ? GOF_PAUSE : GOF_PLAY; // Transition en fonction de l'état de pause
+					action = ACTION_NONE; // Consommer l'action
+					break;
+				case ACTION_CLEAR_GRID:
+					action_clear_grid();
+					current_state = GOF_START; // Après nettoyage, retourne à l'état START
+					action = ACTION_NONE; // Consommer l'action
+					break;
+				case ACTION_SAVE_GRID:
+					action_save_grid();
+					current_state = GOF_START; // Après sauvegarde, retourne à l'état START
+					action = ACTION_NONE; // Consommer l'action
+					break;
+				case ACTION_SELECT_PATTERNS:
+					action_open_patterns_menu(); // Cela va mettre in_pattern_menu_global à true
+					current_state = GOF_IN_PATTERN_MENU;
+					action = ACTION_NONE;
+					break;
+				default:
+					break;
+			}
+			break;
+
+		case GOF_IN_PATTERN_MENU:
+			if (previous_state != GOF_IN_PATTERN_MENU) { // Actions à l'entrée de l'état
+				PATTERN_MENU_open(); // Affiche le menu des patterns
+				is_paused = true;
+				in_menu = false;
+				in_pattern_menu = true;
+			}
+
+			PATTERN_MENU_handle_input(down, center); // Gère la navigation et sélection du pattern
+
+			if(action == ACTION_CREATE_PATTERNS) { // L'action de création de pattern est validée
+				action_create_patterns(); // Applique le pattern sur la grille
+				current_state = GOF_START; // Retourne à l'état START pour permettre de continuer à dessiner ou jouer
+				action = ACTION_NONE; // Consommer l'action
+			}
+			break;
+
+		case GOF_PLAY:
+			if (previous_state != GOF_PLAY) { // Actions à l'entrée de l'état
+				is_paused = false;
+				in_menu = false;
+				in_pattern_menu = false;
+				// Transition d'écran si nécessaire (déjà fait par action_play_pause)
+			}
+			// Si le bouton central est pressé pendant le jeu, passer en pause
+			if(center == BUTTON_PRESS_EVENT && cooldown_after_menu == 0){
+				action_play_pause(); // Cela va inverser is_paused_global à true
+				current_state = GOF_PAUSE;
+				cooldown_after_menu = 10;
+			}
+			break;
+
+		case GOF_PAUSE: // Le jeu est en pause, la grille est visible et modifiable
+			if (previous_state != GOF_PAUSE) { // Actions à l'entrée de l'état
+				is_paused = true;
+				in_menu = false;
+				in_pattern_menu = false;
+				// Transition d'écran si nécessaire (déjà fait par action_play_pause)
+			}
+			// Si le bouton central est pressé, revenir à l'état START (qui permet d'ouvrir le menu)
+			if(center == BUTTON_PRESS_EVENT && cooldown_after_menu == 0){
+				action_play_pause(); // Cela va inverser is_paused_global à false et passer en PLAY
+				current_state = GOF_PLAY;
+				cooldown_after_menu = 10;
+			}
+			// L'utilisateur peut aussi ouvrir le menu depuis PAUSE
+			if(center == BUTTON_PRESS_EVENT && cooldown_after_menu == 0) {
+				action_open_menu();
+				current_state = GOF_IN_MENU;
+				cooldown_after_menu = 10;
+			}
+			break;
+
+		case GOF_SAVE:
+			in_menu = false;
+			if(action == ACTION_NONE)
+				current_state = GOF_START;
+			break;
+
 	}
 
-
-
 }
-
-// Use of the touchscreen with the stylet
 
 /**
- * On permet à l'utilisateur d'intéragir avec l'écran tactile
- * Les variables last_x et last_y empêche un appui long d'inverser constamment l'état des cellules
- * Pourquoi -1 ? Comme ça, au démarrage ou entre deux appuis, rien ne peut se passer ;)
+ * Fonction permettant de créer des patterns prédéfinies.
  */
-
-void GAMEOFLIFE_touchscreen(void)
-{
-//	ILI9341_Rotate(ILI9341_Orientation_Landscape_2);
-
-    static int16_t last_x = -1;
-    static int16_t last_y = -1;
-    int16_t x, y = 0;
-
-
-    if(XPT2046_getMedianCoordinates(&x, &y, XPT2046_COORDINATE_SCREEN_RELATIVE))
-    {
-    	// Conversion tactile pour Landscape_2
-    	y = SCREEN_HEIGHT - y;
-
-        // Éviter de re-toucher la même cellule si on garde le doigt appuyé
-        if(x == last_x && y == last_y)
-            return;
-
-        last_x = x;
-        last_y = y;
-
-        // Coordonnées de cellule
-        uint16_t cell_x = x / CELL_SIZE; // Pour récupérer correctement les cooordonnées
-        uint16_t cell_y = y / CELL_SIZE;
-
-        if(cell_x < NB_COLUMN && cell_y < NB_LINE)
-        {
-            // Inverser état de la cellule
-            grid0.cells[cell_x][cell_y] = (grid0.cells[cell_x][cell_y] == CELL_ALIVE) ? CELL_DEAD : CELL_ALIVE;
-            //ILI9341_DrawCircle(x, y, 3, ILI9341_COLOR_RED);		// Pour détecter l'endroit précis où j'appuie
-
-            DISPLAY_refresh(&grid0);
-        }
-    }
-    else
-    {
-        last_x = -1;
-        last_y = -1;
-    }
-}
-
-
-
 void GAMEOFLIFE_create_pattern(grid_t * grid, uint16_t x, uint16_t y, pattern_e pattern)
 {
 	switch(pattern)
@@ -467,4 +464,131 @@ void GAMEOFLIFE_create_pattern(grid_t * grid, uint16_t x, uint16_t y, pattern_e 
 			break;
 	}
 }
+
+//Private functions
+static void GAMEOFLIFE_process_ms(void) // Cette fonction ne s'implémente nulle part, elle sert juste
+// à lever le flag
+{
+	static uint8_t t_generation;
+
+//	On l'incrémente avec modulo -- cela sert à pouvoir effectuer une action cyclique
+
+	t_generation = (t_generation + 1) % GENERATION_PERIOD_MS;
+
+	if(t_generation == 0)
+		flag_generation = true; // On lève le flag pour passer à la génération suivante chaque 100ms
+
+	if (cooldown_after_menu > 0)
+	    cooldown_after_menu--;
+
+}
+
+/**
+ * @brief Gère le cadencement des générations
+ * @param grid_prev est la grille précédente.
+ * @param grid_next est la nouvelle grille, qui est calculée simultanément dans un buffer;
+ */
+static void GAMEOFLIFE_next_generation(grid_t * grid_prev, grid_t * grid_next)
+{
+	// Variables la cellule actuelle, la suivante
+	// le nbre de cellule mortes/vivantes autour
+
+//	uint8_t nbre_cell_dead = 0;
+	cell_e cell_main;
+	cell_e cell_next;
+
+	// On parcours dans un premier temps tout l'écran
+
+	for(int x = 0; x < NB_COLUMN; x++){
+		for(int y = 0; y < NB_LINE; y++){
+			cell_main = grid_prev->cells[x][y]; // On récup la cellule actuelle, puis on analyse les 8
+			cell_next = cell_main;
+			//aux alentours en parcourant le carré
+			uint8_t nbre_cell_alive = 0;
+			for(int x_count = -1; x_count <= 1; x_count++){
+				for(int y_count = -1; y_count <= 1; y_count++){
+
+					if(x_count == 0 && y_count == 0)
+						continue;
+
+					// Je récupère ainsi la position de chaque cellue du carré, en ignorant celle du milieu
+					int x_neighbor = x + x_count;
+					int y_neighbor = y + y_count;
+
+					// On vérifie qu'on est toujours dans les limites de l'écran, sinon la cellule
+					// est ignorée ( la voisine, pas la cellule qu'on analyse)
+
+					if (x_neighbor >= 0 && x_neighbor < NB_COLUMN && y_neighbor >= 0 && y_neighbor < NB_LINE) {
+						if(grid_prev->cells[x_neighbor][y_neighbor] == CELL_ALIVE){
+							nbre_cell_alive++;
+						}
+					}
+				}
+			}
+			// Après avoir compté le nombre de cellule mortes, on applique les règles du jeu de la vie
+
+			if(cell_main == CELL_ALIVE){
+				if(nbre_cell_alive < 2){
+					cell_next = CELL_DEAD; // Mort par solitude (la pauvre)
+				}else if(nbre_cell_alive == 2 || nbre_cell_alive == 3){
+					cell_next = CELL_ALIVE; // vive la fraternitude
+				}else if(nbre_cell_alive > 3){
+					cell_next = CELL_DEAD; // Elle n'aime pas la populace
+				}
+			}else{
+				if(nbre_cell_alive == 3){
+					cell_next = CELL_ALIVE; // Résurrection par la FAME
+				}
+			}
+
+			// On actualise maintenant l'état de la cellule dans la grille suivante
+			grid_next->cells[x][y] = cell_next;
+		}
+	}
+
+}
+
+/**
+ * On permet à l'utilisateur d'intéragir avec l'écran tactile
+ * Les variables last_x et last_y empêche un appui long d'inverser constamment l'état des cellules
+ * Pourquoi -1 ? Comme ça, au démarrage ou entre deux appuis, rien ne peut se passer ;)
+ */
+
+static void GAMEOFLIFE_touchscreen(void)
+{
+
+    static int16_t last_x = -1;
+    static int16_t last_y = -1;
+    int16_t x, y = 0;
+
+
+    if(XPT2046_getMedianCoordinates(&x, &y, XPT2046_COORDINATE_SCREEN_RELATIVE))
+    {
+
+        // Éviter de re-toucher la même cellule si on garde le doigt appuyé
+        if(x == last_x && y == last_y)
+            return;
+
+        last_x = x;
+        last_y = y;
+
+        // Coordonnées de cellule
+        uint16_t cell_x = x / CELL_SIZE; // Pour récupérer correctement les cooordonnées
+        uint16_t cell_y = y / CELL_SIZE;
+
+        if(cell_x < NB_COLUMN && cell_y < NB_LINE)
+        {
+            // Inverser état de la cellule
+            grid0.cells[cell_x][cell_y] = (grid0.cells[cell_x][cell_y] == CELL_ALIVE) ? CELL_DEAD : CELL_ALIVE;
+
+            DISPLAY_refresh(&grid0);
+        }
+    }
+    else
+    {
+        last_x = -1;
+        last_y = -1;
+    }
+}
+
 

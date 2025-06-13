@@ -40,8 +40,8 @@ app/gameoflife.o: ../app/gameoflife.c ../app/gameoflife.h \
  ../drivers/stm32g4xx_hal/Inc/stm32g4xx_hal_tim_ex.h \
  ../drivers/stm32g4xx_hal/Inc/stm32g4xx_hal_uart.h \
  ../drivers/stm32g4xx_hal/Inc/stm32g4xx_hal_uart_ex.h ../app/button.h \
- ../app/actions.h ../app/display.h ../drivers/bsp/stm32g4_systick.h \
- ../drivers/bsp/stm32g4_utils.h \
+ ../app/actions.h ../app/display.h ../app/menu.h \
+ ../drivers/bsp/stm32g4_systick.h ../drivers/bsp/stm32g4_utils.h \
  ../drivers/bsp/TFT_ili9341/stm32g4_xpt2046.h ../app/config.h \
  ../drivers/bsp/stm32g4_utils.h \
  ../drivers/bsp/TFT_ili9341/stm32g4_ili9341.h \
@@ -91,6 +91,7 @@ app/gameoflife.o: ../app/gameoflife.c ../app/gameoflife.h \
 ../app/button.h:
 ../app/actions.h:
 ../app/display.h:
+../app/menu.h:
 ../drivers/bsp/stm32g4_systick.h:
 ../drivers/bsp/stm32g4_utils.h:
 ../drivers/bsp/TFT_ili9341/stm32g4_xpt2046.h:

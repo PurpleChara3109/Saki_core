@@ -1,8 +1,5 @@
-../app/button.c:38:6:BUTTONS_init	16	static
-../app/button.c:50:6:BUTTONS_process_ms	4	static
-../app/button.c:58:9:BUTTON_left_read	8	static
-../app/button.c:63:9:BUTTON_right_read	8	static
-../app/button.c:68:9:BUTTON_up_read	8	static
-../app/button.c:73:9:BUTTON_down_read	8	static
-../app/button.c:78:9:BUTTON_center_read	8	static
-../app/button.c:85:6:BUTTONS_update	32	static
+../app/button.c:32:6:BUTTONS_init	16	static
+../app/button.c:41:6:BUTTONS_process_ms	4	static
+../app/button.c:50:9:BUTTON_down_read	8	static
+../app/button.c:55:9:BUTTON_center_read	8	static
+../app/button.c:64:6:BUTTONS_update	24	static

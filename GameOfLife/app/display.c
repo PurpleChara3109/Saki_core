@@ -25,8 +25,6 @@ static bool reset = false;
 
 void DISPLAY_init(void) {
 	ILI9341_Init();
-	ILI9341_Fill(ILI9341_COLOR_WHITE);
-	ILI9341_Rotate(ILI9341_Orientation_Landscape_2);
 
 	// Pour régler le rafraîchissement de l'écran
 	for(int x = 0; x < NB_COLUMN; x++) {

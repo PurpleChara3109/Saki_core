@@ -1,0 +1,84 @@
+\doxysection{gameoflife.\+h}
+\hypertarget{gameoflife_8h_source}{}\label{gameoflife_8h_source}\mbox{\hyperlink{gameoflife_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ breakbricks.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Feb\ 12,\ 2024}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ Nirgal}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ GAMEOFLIFE\_H\_}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ GAMEOFLIFE\_H\_}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ SCREEN\_WIDTH\ \ \ \ 320}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ SCREEN\_HEIGHT\ \ \ 240}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ CELL\_SIZE\ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ NB\_COLUMN\ \ \ \ \ \ \ SCREEN\_WIDTH/CELL\_SIZE}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ NB\_LINE\ \ \ \ \ \ \ \ \ SCREEN\_HEIGHT/CELL\_SIZE}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ NB\_CELLS\ \ \ \ \ \ \ \ (NB\_COLUMN*NB\_LINE)}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ État\ d'une\ cellule}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ En\ langage\ micro\ contrôleur,\ il\ n'y\ a\ pas\ '\#typedef'}}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a1aba3fd9f37b174780a67f9840b9155ba05267a045edc14597439b1031dbe6aa5}{CELL\_DEAD}}\ =\ 0,}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a1aba3fd9f37b174780a67f9840b9155baf8294def19c05c3f51651efbbdf21110}{CELL\_ALIVE}}\ =\ 1\}\ \mbox{\hyperlink{gameoflife_8h_a1aba3fd9f37b174780a67f9840b9155b}{cell\_e}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ Grille\ sur\ laquelle\ évolue\ des\ cellules}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a1aba3fd9f37b174780a67f9840b9155b}{cell\_e}}\ cells\ [\mbox{\hyperlink{gameoflife_8h_a617f9b87213ae7e87d949000c17df82a}{NB\_COLUMN}}][\mbox{\hyperlink{gameoflife_8h_a37dc835f7439da5fffefe7fdc7d81355}{NB\_LINE}}];\}\ \mbox{\hyperlink{structgrid__t}{grid\_t}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{/*\ \ \ \ \ \ \string^\ \ \ \ \ \ \ column}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ y\ \ \ \ \ \ \ v}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ \ \ \ \ \ \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ \ \ \ \ \ |\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|}}
+\DoxyCodeLine{00038\ \textcolor{comment}{*\ \ \ \ \ \ \ |\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|}}
+\DoxyCodeLine{00039\ \textcolor{comment}{*\ \ \ \ \ \ \ |\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\ \ \ \ \ \ \ <-\/-\/-\/-\/\ line}}
+\DoxyCodeLine{00040\ \textcolor{comment}{*\ \ \ \ \ \ \ |\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|}}
+\DoxyCodeLine{00041\ \textcolor{comment}{*\ \ \ \ \ \ \ |\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|}}
+\DoxyCodeLine{00042\ \textcolor{comment}{*\ \ \ \ \ \ \ |\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|}}
+\DoxyCodeLine{00043\ \textcolor{comment}{*\ \ \ \ \ \ \ |\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|}}
+\DoxyCodeLine{00044\ \textcolor{comment}{*\ \ \ \ \ \ \ |\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|}}
+\DoxyCodeLine{00045\ \textcolor{comment}{*\ \ \ \ \ \ \ |\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|}}
+\DoxyCodeLine{00046\ \textcolor{comment}{*\ \ \ \ \ \ \ |\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|}}
+\DoxyCodeLine{00047\ \textcolor{comment}{*\ \ \ \ \ \ \ |\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|}}
+\DoxyCodeLine{00048\ \textcolor{comment}{*\ \ \ \ \ \ \ o\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|\_\_|-\/-\/-\/>\ \ \ x}}
+\DoxyCodeLine{00049\ \textcolor{comment}{*}}
+\DoxyCodeLine{00050\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91a41cad930ecad7a13e386de20c68f2dfb}{PATTERN\_BOX}},}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91a74ac84442216c97bf97d13c8f9aba6e5}{PATTERN\_TOAD}},}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91a7b39722a0b428f71fc5fe793e93c1446}{PATTERN\_BEEHIVE}},}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91ae822c7e466ecb99311d4c0a170926051}{PATTERN\_BLINKER}},}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91a8727e8f7183878aa949a2c62a9756704}{PATTERN\_SHIP}},}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91ae1b11f038335eb2862f373ae9133ebf6}{PATTERN\_PULSAR}},}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91ad89670403fc308a4a1f004986b2ba26c}{PATTERN\_GLIDER\_GUN}},}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91a669bf8c2d7c2619fb2a0321251355fad}{PATTERN\_LIGHT\_WEIGHT\_SPACESHIP}},}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91acfe937cdd99182a81c339bf6085fea54}{PATTERN\_MIDDLE\_WEIGHT\_SPACESHIP}},}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91a8c1d386f7b19a9125d4656f9d087c40b}{PATTERN\_HEAVY\_WEIGHT\_SPACESHIP}},}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91aab184ac3c57a52c4e71940998b50d573}{PATTERN\_QUEEN\_BEE\_SHUTTLE}},}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91ad5daa21c0a34e2fb83ff0303bc191dc6}{PATTERN\_PENTADECATHLON}},}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91aabe63b56483e80428ef60ac4f1e2c64e}{PATTERN\_GLIDER}},}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91a07d5c73b43a0b1c588663a7938fca38d}{PATTERN\_NB}}}
+\DoxyCodeLine{00068\ \}\mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91}{pattern\_e}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91}{pattern\_e}}\ \mbox{\hyperlink{gameoflife_8h_a0d4413388976a9ff0f953cdc10c48a27}{selected\_pattern}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gameoflife_8h_a8dbd37c309fa40113ffb0c473a8954c3}{GAMEOFLIFE\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gameoflife_8h_a441ddb375941a9008589ce0b863acb9c}{GAMEOFLIFE\_process\_main}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gameoflife_8h_a8c26661ecc22d30115ea2429a83bff68}{GAMEOFLIFE\_create\_pattern}}(\mbox{\hyperlink{structgrid__t}{grid\_t}}\ *\ grid,\ uint16\_t\ x,\ uint16\_t\ y,\ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91}{pattern\_e}}\ pattern);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ GAMEOFLIFE\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

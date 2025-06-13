@@ -1,0 +1,225 @@
+\doxysection{gameoflife.\+c File Reference}
+\hypertarget{gameoflife_8c}{}\label{gameoflife_8c}\index{gameoflife.c@{gameoflife.c}}
+{\ttfamily \#include "{}gameoflife.\+h"{}}\newline
+{\ttfamily \#include "{}stm32g4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}button.\+h"{}}\newline
+{\ttfamily \#include "{}actions.\+h"{}}\newline
+{\ttfamily \#include "{}display.\+h"{}}\newline
+{\ttfamily \#include "{}menu.\+h"{}}\newline
+{\ttfamily \#include "{}stm32g4\+\_\+systick.\+h"{}}\newline
+{\ttfamily \#include "{}TFT\+\_\+ili9341/stm32g4\+\_\+xpt2046.\+h"{}}\newline
+{\ttfamily \#include "{}TFT\+\_\+ili9341/stm32g4\+\_\+ili9341.\+h"{}}\newline
+Include dependency graph for gameoflife.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gameoflife_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gameoflife_8c_a3b13da6bacb29f920f319fdcdff882e8}{NB\+\_\+\+LEVELS}}~11
+\begin{DoxyCompactList}\small\item\em Fonction principale qui gère le cadencement et le fonctionne de l\textquotesingle{}application. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{gameoflife_8c_a3fe2b17cd138e03d5af82f04e9a5737a}{GENERATION\+\_\+\+PERIOD\+\_\+\+MS}}~100
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{gameoflife_8c_a923762042f3074402fbf32bc96074164}{state\+\_\+game}} \{ \newline
+\mbox{\hyperlink{gameoflife_8c_a923762042f3074402fbf32bc96074164aa18324a38669c4c9f75e0bdbecbbef53}{GOF\+\_\+\+INIT}}
+, \mbox{\hyperlink{gameoflife_8c_a923762042f3074402fbf32bc96074164a02c6b2310c320cb6b33a313063ef93b1}{GOF\+\_\+\+START}}
+, \mbox{\hyperlink{gameoflife_8c_a923762042f3074402fbf32bc96074164aa083e279489335c4acf58741725d5dc0}{GOF\+\_\+\+IN\+\_\+\+MENU}}
+, \mbox{\hyperlink{gameoflife_8c_a923762042f3074402fbf32bc96074164a49dc7d6b8dbfa243851206a9051afef2}{GOF\+\_\+\+IN\+\_\+\+PATTERN\+\_\+\+MENU}}
+, \newline
+\mbox{\hyperlink{gameoflife_8c_a923762042f3074402fbf32bc96074164a39b6ebefd57cfd9b93890c326a620910}{GOF\+\_\+\+PLAY}}
+, \mbox{\hyperlink{gameoflife_8c_a923762042f3074402fbf32bc96074164a18c3cf4eaff56f045daf6786c7772f50}{GOF\+\_\+\+PAUSE}}
+, \mbox{\hyperlink{gameoflife_8c_a923762042f3074402fbf32bc96074164a5471cec3b35889963610161191d396b0}{GOF\+\_\+\+SAVE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gameoflife_8c_a8c26661ecc22d30115ea2429a83bff68}{GAMEOFLIFE\+\_\+create\+\_\+pattern}} (\mbox{\hyperlink{structgrid__t}{grid\+\_\+t}} \texorpdfstring{$\ast$}{*}grid, uint16\+\_\+t x, uint16\+\_\+t y, \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91}{pattern\+\_\+e}} pattern)
+\item 
+void \mbox{\hyperlink{gameoflife_8c_a8dbd37c309fa40113ffb0c473a8954c3}{GAMEOFLIFE\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialisation de notre Jeu de la vie. On initialise l\textquotesingle{}écran LCD, le fonctionnalité tactile, ainsi que les boutons. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gameoflife_8c_a441ddb375941a9008589ce0b863acb9c}{GAMEOFLIFE\+\_\+process\+\_\+main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structgrid__t}{grid\+\_\+t}} \mbox{\hyperlink{gameoflife_8c_aab090ad7eb6b25c2100d8e2328a7e5c7}{grid0}}
+\begin{DoxyCompactList}\small\item\em Gère les différentes actions disponibles et effectuées par l\textquotesingle{}utilisateur. @\+Author \+: Valéry et Neïssa. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\+\_\+actions\+\_\+e}} \mbox{\hyperlink{gameoflife_8c_a9b2291ad5bd77e04a695e459dd77a344}{action}}
+\item 
+volatile bool \mbox{\hyperlink{gameoflife_8c_a0fdecda1ad03dfe9115700dcdd964976}{is\+\_\+paused}}
+\item 
+volatile bool \mbox{\hyperlink{gameoflife_8c_aeac3fa565c8e7503faaeda44618bd4b4}{in\+\_\+menu}}
+\item 
+volatile bool \mbox{\hyperlink{gameoflife_8c_a030a818574f03b44c17101df9e60573c}{in\+\_\+pattern\+\_\+menu}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{gameoflife_8c_af3d178b460e3ce9eb4bacd7bfa0bc024}{cooldown\+\_\+after\+\_\+menu}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{gameoflife_8c_a3fe2b17cd138e03d5af82f04e9a5737a}\label{gameoflife_8c_a3fe2b17cd138e03d5af82f04e9a5737a} 
+\index{gameoflife.c@{gameoflife.c}!GENERATION\_PERIOD\_MS@{GENERATION\_PERIOD\_MS}}
+\index{GENERATION\_PERIOD\_MS@{GENERATION\_PERIOD\_MS}!gameoflife.c@{gameoflife.c}}
+\doxysubsubsection{\texorpdfstring{GENERATION\_PERIOD\_MS}{GENERATION\_PERIOD\_MS}}
+{\footnotesize\ttfamily \#define GENERATION\+\_\+\+PERIOD\+\_\+\+MS~100}
+
+\Hypertarget{gameoflife_8c_a3b13da6bacb29f920f319fdcdff882e8}\label{gameoflife_8c_a3b13da6bacb29f920f319fdcdff882e8} 
+\index{gameoflife.c@{gameoflife.c}!NB\_LEVELS@{NB\_LEVELS}}
+\index{NB\_LEVELS@{NB\_LEVELS}!gameoflife.c@{gameoflife.c}}
+\doxysubsubsection{\texorpdfstring{NB\_LEVELS}{NB\_LEVELS}}
+{\footnotesize\ttfamily \#define NB\+\_\+\+LEVELS~11}
+
+
+
+Fonction principale qui gère le cadencement et le fonctionne de l\textquotesingle{}application. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{gameoflife_8c_a923762042f3074402fbf32bc96074164}\label{gameoflife_8c_a923762042f3074402fbf32bc96074164} 
+\index{gameoflife.c@{gameoflife.c}!state\_game@{state\_game}}
+\index{state\_game@{state\_game}!gameoflife.c@{gameoflife.c}}
+\doxysubsubsection{\texorpdfstring{state\_game}{state\_game}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gameoflife_8c_a923762042f3074402fbf32bc96074164}{state\+\_\+game}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GOF\_INIT@{GOF\_INIT}!gameoflife.c@{gameoflife.c}}\index{gameoflife.c@{gameoflife.c}!GOF\_INIT@{GOF\_INIT}}}\Hypertarget{gameoflife_8c_a923762042f3074402fbf32bc96074164aa18324a38669c4c9f75e0bdbecbbef53}\label{gameoflife_8c_a923762042f3074402fbf32bc96074164aa18324a38669c4c9f75e0bdbecbbef53} 
+GOF\+\_\+\+INIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GOF\_START@{GOF\_START}!gameoflife.c@{gameoflife.c}}\index{gameoflife.c@{gameoflife.c}!GOF\_START@{GOF\_START}}}\Hypertarget{gameoflife_8c_a923762042f3074402fbf32bc96074164a02c6b2310c320cb6b33a313063ef93b1}\label{gameoflife_8c_a923762042f3074402fbf32bc96074164a02c6b2310c320cb6b33a313063ef93b1} 
+GOF\+\_\+\+START&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GOF\_IN\_MENU@{GOF\_IN\_MENU}!gameoflife.c@{gameoflife.c}}\index{gameoflife.c@{gameoflife.c}!GOF\_IN\_MENU@{GOF\_IN\_MENU}}}\Hypertarget{gameoflife_8c_a923762042f3074402fbf32bc96074164aa083e279489335c4acf58741725d5dc0}\label{gameoflife_8c_a923762042f3074402fbf32bc96074164aa083e279489335c4acf58741725d5dc0} 
+GOF\+\_\+\+IN\+\_\+\+MENU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GOF\_IN\_PATTERN\_MENU@{GOF\_IN\_PATTERN\_MENU}!gameoflife.c@{gameoflife.c}}\index{gameoflife.c@{gameoflife.c}!GOF\_IN\_PATTERN\_MENU@{GOF\_IN\_PATTERN\_MENU}}}\Hypertarget{gameoflife_8c_a923762042f3074402fbf32bc96074164a49dc7d6b8dbfa243851206a9051afef2}\label{gameoflife_8c_a923762042f3074402fbf32bc96074164a49dc7d6b8dbfa243851206a9051afef2} 
+GOF\+\_\+\+IN\+\_\+\+PATTERN\+\_\+\+MENU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GOF\_PLAY@{GOF\_PLAY}!gameoflife.c@{gameoflife.c}}\index{gameoflife.c@{gameoflife.c}!GOF\_PLAY@{GOF\_PLAY}}}\Hypertarget{gameoflife_8c_a923762042f3074402fbf32bc96074164a39b6ebefd57cfd9b93890c326a620910}\label{gameoflife_8c_a923762042f3074402fbf32bc96074164a39b6ebefd57cfd9b93890c326a620910} 
+GOF\+\_\+\+PLAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GOF\_PAUSE@{GOF\_PAUSE}!gameoflife.c@{gameoflife.c}}\index{gameoflife.c@{gameoflife.c}!GOF\_PAUSE@{GOF\_PAUSE}}}\Hypertarget{gameoflife_8c_a923762042f3074402fbf32bc96074164a18c3cf4eaff56f045daf6786c7772f50}\label{gameoflife_8c_a923762042f3074402fbf32bc96074164a18c3cf4eaff56f045daf6786c7772f50} 
+GOF\+\_\+\+PAUSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GOF\_SAVE@{GOF\_SAVE}!gameoflife.c@{gameoflife.c}}\index{gameoflife.c@{gameoflife.c}!GOF\_SAVE@{GOF\_SAVE}}}\Hypertarget{gameoflife_8c_a923762042f3074402fbf32bc96074164a5471cec3b35889963610161191d396b0}\label{gameoflife_8c_a923762042f3074402fbf32bc96074164a5471cec3b35889963610161191d396b0} 
+GOF\+\_\+\+SAVE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gameoflife_8c_a8c26661ecc22d30115ea2429a83bff68}\label{gameoflife_8c_a8c26661ecc22d30115ea2429a83bff68} 
+\index{gameoflife.c@{gameoflife.c}!GAMEOFLIFE\_create\_pattern@{GAMEOFLIFE\_create\_pattern}}
+\index{GAMEOFLIFE\_create\_pattern@{GAMEOFLIFE\_create\_pattern}!gameoflife.c@{gameoflife.c}}
+\doxysubsubsection{\texorpdfstring{GAMEOFLIFE\_create\_pattern()}{GAMEOFLIFE\_create\_pattern()}}
+{\footnotesize\ttfamily void GAMEOFLIFE\+\_\+create\+\_\+pattern (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgrid__t}{grid\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{grid,  }\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{\mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91}{pattern\+\_\+e}}}]{pattern }\end{DoxyParamCaption})}
+
+Fonction permettant de créer des patterns prédéfinies. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gameoflife_8c_a8c26661ecc22d30115ea2429a83bff68_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{gameoflife_8c_a8dbd37c309fa40113ffb0c473a8954c3}\label{gameoflife_8c_a8dbd37c309fa40113ffb0c473a8954c3} 
+\index{gameoflife.c@{gameoflife.c}!GAMEOFLIFE\_init@{GAMEOFLIFE\_init}}
+\index{GAMEOFLIFE\_init@{GAMEOFLIFE\_init}!gameoflife.c@{gameoflife.c}}
+\doxysubsubsection{\texorpdfstring{GAMEOFLIFE\_init()}{GAMEOFLIFE\_init()}}
+{\footnotesize\ttfamily void GAMEOFLIFE\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialisation de notre Jeu de la vie. On initialise l\textquotesingle{}écran LCD, le fonctionnalité tactile, ainsi que les boutons. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gameoflife_8c_a8dbd37c309fa40113ffb0c473a8954c3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{gameoflife_8c_a8dbd37c309fa40113ffb0c473a8954c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{gameoflife_8c_a441ddb375941a9008589ce0b863acb9c}\label{gameoflife_8c_a441ddb375941a9008589ce0b863acb9c} 
+\index{gameoflife.c@{gameoflife.c}!GAMEOFLIFE\_process\_main@{GAMEOFLIFE\_process\_main}}
+\index{GAMEOFLIFE\_process\_main@{GAMEOFLIFE\_process\_main}!gameoflife.c@{gameoflife.c}}
+\doxysubsubsection{\texorpdfstring{GAMEOFLIFE\_process\_main()}{GAMEOFLIFE\_process\_main()}}
+{\footnotesize\ttfamily void GAMEOFLIFE\+\_\+process\+\_\+main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Fonction matérialisant le processus principal de notre jeu. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gameoflife_8c_a441ddb375941a9008589ce0b863acb9c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{gameoflife_8c_a441ddb375941a9008589ce0b863acb9c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{gameoflife_8c_a9b2291ad5bd77e04a695e459dd77a344}\label{gameoflife_8c_a9b2291ad5bd77e04a695e459dd77a344} 
+\index{gameoflife.c@{gameoflife.c}!action@{action}}
+\index{action@{action}!gameoflife.c@{gameoflife.c}}
+\doxysubsubsection{\texorpdfstring{action}{action}}
+{\footnotesize\ttfamily \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\+\_\+actions\+\_\+e}} action}
+
+\Hypertarget{gameoflife_8c_af3d178b460e3ce9eb4bacd7bfa0bc024}\label{gameoflife_8c_af3d178b460e3ce9eb4bacd7bfa0bc024} 
+\index{gameoflife.c@{gameoflife.c}!cooldown\_after\_menu@{cooldown\_after\_menu}}
+\index{cooldown\_after\_menu@{cooldown\_after\_menu}!gameoflife.c@{gameoflife.c}}
+\doxysubsubsection{\texorpdfstring{cooldown\_after\_menu}{cooldown\_after\_menu}}
+{\footnotesize\ttfamily uint8\+\_\+t cooldown\+\_\+after\+\_\+menu = 0}
+
+\Hypertarget{gameoflife_8c_aab090ad7eb6b25c2100d8e2328a7e5c7}\label{gameoflife_8c_aab090ad7eb6b25c2100d8e2328a7e5c7} 
+\index{gameoflife.c@{gameoflife.c}!grid0@{grid0}}
+\index{grid0@{grid0}!gameoflife.c@{gameoflife.c}}
+\doxysubsubsection{\texorpdfstring{grid0}{grid0}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgrid__t}{grid\+\_\+t}} grid0}
+
+
+
+Gère les différentes actions disponibles et effectuées par l\textquotesingle{}utilisateur. @\+Author \+: Valéry et Neïssa. 
+
+\Hypertarget{gameoflife_8c_aeac3fa565c8e7503faaeda44618bd4b4}\label{gameoflife_8c_aeac3fa565c8e7503faaeda44618bd4b4} 
+\index{gameoflife.c@{gameoflife.c}!in\_menu@{in\_menu}}
+\index{in\_menu@{in\_menu}!gameoflife.c@{gameoflife.c}}
+\doxysubsubsection{\texorpdfstring{in\_menu}{in\_menu}}
+{\footnotesize\ttfamily volatile bool in\+\_\+menu}
+
+\Hypertarget{gameoflife_8c_a030a818574f03b44c17101df9e60573c}\label{gameoflife_8c_a030a818574f03b44c17101df9e60573c} 
+\index{gameoflife.c@{gameoflife.c}!in\_pattern\_menu@{in\_pattern\_menu}}
+\index{in\_pattern\_menu@{in\_pattern\_menu}!gameoflife.c@{gameoflife.c}}
+\doxysubsubsection{\texorpdfstring{in\_pattern\_menu}{in\_pattern\_menu}}
+{\footnotesize\ttfamily volatile bool in\+\_\+pattern\+\_\+menu}
+
+\Hypertarget{gameoflife_8c_a0fdecda1ad03dfe9115700dcdd964976}\label{gameoflife_8c_a0fdecda1ad03dfe9115700dcdd964976} 
+\index{gameoflife.c@{gameoflife.c}!is\_paused@{is\_paused}}
+\index{is\_paused@{is\_paused}!gameoflife.c@{gameoflife.c}}
+\doxysubsubsection{\texorpdfstring{is\_paused}{is\_paused}}
+{\footnotesize\ttfamily volatile bool is\+\_\+paused}
+

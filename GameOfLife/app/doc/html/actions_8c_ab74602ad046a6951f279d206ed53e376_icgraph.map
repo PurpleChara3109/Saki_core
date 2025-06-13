@@ -1,0 +1,12 @@
+<map id="TRANSITION_apply_with_grid" name="TRANSITION_apply_with_grid">
+<area shape="rect" id="Node000001" title=" " alt="" coords="676,31,888,56"/>
+<area shape="rect" id="Node000002" href="$actions_8c.html#a937f4a9ade0254c1ff7aea7a682c2cd0" title=" " alt="" coords="495,31,628,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="662,46,628,46,628,41,662,41"/>
+<area shape="rect" id="Node000003" href="$actions_8c.html#a01612a351b76c9214cc7a6133c587081" title=" " alt="" coords="341,5,447,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="481,34,447,29,447,23,481,29"/>
+<area shape="rect" id="Node000004" href="$test_8c.html#ab0abdf114a842fa36670b98876362227" title="Fonction principale de la machine à états de test. Cette fonction doit être appelée en continu dans l..." alt="" coords="108,31,293,56"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="481,46,294,46,294,41,481,41"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="328,29,294,34,293,29,327,24"/>
+<area shape="rect" id="Node000005" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="95,46,60,46,60,41,95,41"/>
+</map>

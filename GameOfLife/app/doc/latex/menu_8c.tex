@@ -1,0 +1,167 @@
+\doxysection{menu.\+c File Reference}
+\hypertarget{menu_8c}{}\label{menu_8c}\index{menu.c@{menu.c}}
+{\ttfamily \#include "{}menu.\+h"{}}\newline
+{\ttfamily \#include "{}config.\+h"{}}\newline
+{\ttfamily \#include "{}button.\+h"{}}\newline
+{\ttfamily \#include "{}TFT\+\_\+ili9341/stm32g4\+\_\+ili9341.\+h"{}}\newline
+{\ttfamily \#include "{}TFT\+\_\+ili9341/stm32g4\+\_\+fonts.\+h"{}}\newline
+{\ttfamily \#include "{}gameoflife.\+h"{}}\newline
+Include dependency graph for menu.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8c_a958d728ad53b9a0ca10f026167c7005a}{MENU\+\_\+open}} (void)
+\begin{DoxyCompactList}\small\item\em Ouvre le menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8c_a155bc8b3600270ca91848e16e416200e}{MENU\+\_\+display}} (void)
+\begin{DoxyCompactList}\small\item\em \+: Fonction pour afficher le menu à l\textquotesingle{}écran On affiche à l\textquotesingle{}écran tous les menus accessibles \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8c_aaaaf428b2189589da7ec3138d9af92fe}{MENU\+\_\+handle\+\_\+input}} (\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} nav, \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} validate)
+\begin{DoxyCompactList}\small\item\em Navigue dans le menu avec le bouton du bas. Chaque appui passe à l\textquotesingle{}élément suivant (boucle circulaire). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8c_a827c0a962cd6f5471dc68c781736535e}{PATTERN\+\_\+\+MENU\+\_\+open}} (void)
+\item 
+void \mbox{\hyperlink{menu_8c_a08b7e4ff13321fedbea7fdeb5b481b0a}{PATTERN\+\_\+\+MENU\+\_\+handle\+\_\+input}} (\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} nav, \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} validate)
+\begin{DoxyCompactList}\small\item\em Navigue dans le menu de choix de patterns avec le bouton du bas. Chaque appui passe à l\textquotesingle{}élément suivant (boucle circulaire). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91}{pattern\+\_\+e}} \mbox{\hyperlink{menu_8c_a0d4413388976a9ff0f953cdc10c48a27}{selected\+\_\+pattern}} = \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91a41cad930ecad7a13e386de20c68f2dfb}{PATTERN\+\_\+\+BOX}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{menu_8c_a570133244c2d44acff894d1880f34ffc}{pattern\+\_\+labels}} \mbox{[}\mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91a07d5c73b43a0b1c588663a7938fca38d}{PATTERN\+\_\+\+NB}}\mbox{]}
+\item 
+\mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184}{menu\+\_\+e}} \mbox{\hyperlink{menu_8c_a415e9887f2fba8dc615187777ae558c5}{selected\+\_\+menu}} = \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184ae7b38a01ff45aa7e97a25db08976b11a}{MENU\+\_\+\+PLAY\+\_\+\+PAUSE}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8c_a155bc8b3600270ca91848e16e416200e}\label{menu_8c_a155bc8b3600270ca91848e16e416200e} 
+\index{menu.c@{menu.c}!MENU\_display@{MENU\_display}}
+\index{MENU\_display@{MENU\_display}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{MENU\_display()}{MENU\_display()}}
+{\footnotesize\ttfamily void MENU\+\_\+display (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\+: Fonction pour afficher le menu à l\textquotesingle{}écran On affiche à l\textquotesingle{}écran tous les menus accessibles 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8c_a155bc8b3600270ca91848e16e416200e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8c_aaaaf428b2189589da7ec3138d9af92fe}\label{menu_8c_aaaaf428b2189589da7ec3138d9af92fe} 
+\index{menu.c@{menu.c}!MENU\_handle\_input@{MENU\_handle\_input}}
+\index{MENU\_handle\_input@{MENU\_handle\_input}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{MENU\_handle\_input()}{MENU\_handle\_input()}}
+{\footnotesize\ttfamily void MENU\+\_\+handle\+\_\+input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}}}]{nav,  }\item[{\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}}}]{validate }\end{DoxyParamCaption})}
+
+
+
+Navigue dans le menu avec le bouton du bas. Chaque appui passe à l\textquotesingle{}élément suivant (boucle circulaire). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nav} & pour naviguer dans le menu \\
+\hline
+{\em validate} & pour sélectionner le menu \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{menu_8c_aaaaf428b2189589da7ec3138d9af92fe_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8c_a958d728ad53b9a0ca10f026167c7005a}\label{menu_8c_a958d728ad53b9a0ca10f026167c7005a} 
+\index{menu.c@{menu.c}!MENU\_open@{MENU\_open}}
+\index{MENU\_open@{MENU\_open}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{MENU\_open()}{MENU\_open()}}
+{\footnotesize\ttfamily void MENU\+\_\+open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Ouvre le menu. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{menu_8c_a958d728ad53b9a0ca10f026167c7005a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8c_a958d728ad53b9a0ca10f026167c7005a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8c_a08b7e4ff13321fedbea7fdeb5b481b0a}\label{menu_8c_a08b7e4ff13321fedbea7fdeb5b481b0a} 
+\index{menu.c@{menu.c}!PATTERN\_MENU\_handle\_input@{PATTERN\_MENU\_handle\_input}}
+\index{PATTERN\_MENU\_handle\_input@{PATTERN\_MENU\_handle\_input}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{PATTERN\_MENU\_handle\_input()}{PATTERN\_MENU\_handle\_input()}}
+{\footnotesize\ttfamily void PATTERN\+\_\+\+MENU\+\_\+handle\+\_\+input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}}}]{nav,  }\item[{\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}}}]{validate }\end{DoxyParamCaption})}
+
+
+
+Navigue dans le menu de choix de patterns avec le bouton du bas. Chaque appui passe à l\textquotesingle{}élément suivant (boucle circulaire). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nav} & pour naviguer dans le menu \\
+\hline
+{\em validate} & pour sélectionner le patterns \\
+\hline
+\end{DoxyParams}
+\Hypertarget{menu_8c_a827c0a962cd6f5471dc68c781736535e}\label{menu_8c_a827c0a962cd6f5471dc68c781736535e} 
+\index{menu.c@{menu.c}!PATTERN\_MENU\_open@{PATTERN\_MENU\_open}}
+\index{PATTERN\_MENU\_open@{PATTERN\_MENU\_open}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{PATTERN\_MENU\_open()}{PATTERN\_MENU\_open()}}
+{\footnotesize\ttfamily void PATTERN\+\_\+\+MENU\+\_\+open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Ouvre le menu de choix de patterns. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8c_a827c0a962cd6f5471dc68c781736535e_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{menu_8c_a570133244c2d44acff894d1880f34ffc}\label{menu_8c_a570133244c2d44acff894d1880f34ffc} 
+\index{menu.c@{menu.c}!pattern\_labels@{pattern\_labels}}
+\index{pattern\_labels@{pattern\_labels}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{pattern\_labels}{pattern\_labels}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} pattern\+\_\+labels\mbox{[}\mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91a07d5c73b43a0b1c588663a7938fca38d}{PATTERN\+\_\+\+NB}}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Box"{}},\ \textcolor{stringliteral}{"{}Toad"{}},\ \textcolor{stringliteral}{"{}Beehive"{}},\ \textcolor{stringliteral}{"{}Blinker"{}},\ \textcolor{stringliteral}{"{}Ship"{}},\ \textcolor{stringliteral}{"{}Pulsar"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Glider\ Gun"{}},\ \textcolor{stringliteral}{"{}LW\ Spaceship"{}},\ \textcolor{stringliteral}{"{}MW\ Spaceship"{}},\textcolor{stringliteral}{"{}HW\ Spaceship"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{menu_8c_a415e9887f2fba8dc615187777ae558c5}\label{menu_8c_a415e9887f2fba8dc615187777ae558c5} 
+\index{menu.c@{menu.c}!selected\_menu@{selected\_menu}}
+\index{selected\_menu@{selected\_menu}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{selected\_menu}{selected\_menu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184}{menu\+\_\+e}} selected\+\_\+menu = \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184ae7b38a01ff45aa7e97a25db08976b11a}{MENU\+\_\+\+PLAY\+\_\+\+PAUSE}}}
+
+\Hypertarget{menu_8c_a0d4413388976a9ff0f953cdc10c48a27}\label{menu_8c_a0d4413388976a9ff0f953cdc10c48a27} 
+\index{menu.c@{menu.c}!selected\_pattern@{selected\_pattern}}
+\index{selected\_pattern@{selected\_pattern}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{selected\_pattern}{selected\_pattern}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91}{pattern\+\_\+e}} selected\+\_\+pattern = \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91a41cad930ecad7a13e386de20c68f2dfb}{PATTERN\+\_\+\+BOX}}}
+

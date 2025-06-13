@@ -1,0 +1,265 @@
+\doxysection{actions.\+c File Reference}
+\hypertarget{actions_8c}{}\label{actions_8c}\index{actions.c@{actions.c}}
+{\ttfamily \#include "{}actions.\+h"{}}\newline
+{\ttfamily \#include "{}config.\+h"{}}\newline
+{\ttfamily \#include "{}TFT\+\_\+ili9341/stm32g4\+\_\+fonts.\+h"{}}\newline
+{\ttfamily \#include "{}TFT\+\_\+ili9341/stm32g4\+\_\+ili9341.\+h"{}}\newline
+{\ttfamily \#include "{}menu.\+h"{}}\newline
+{\ttfamily \#include "{}display.\+h"{}}\newline
+Include dependency graph for actions.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{actions_8c_a1ce114ea5b1f84857f72c9fdf71f23ab}{TRANSITION\+\_\+vertical\+\_\+wipe}} (uint16\+\_\+t color, uint16\+\_\+t step\+\_\+delay)
+\item 
+void \mbox{\hyperlink{actions_8c_ab74602ad046a6951f279d206ed53e376}{TRANSITION\+\_\+apply\+\_\+with\+\_\+grid}} (\mbox{\hyperlink{structgrid__t}{grid\+\_\+t}} \texorpdfstring{$\ast$}{*}grid, uint16\+\_\+t color, uint16\+\_\+t step\+\_\+delay)
+\item 
+void \mbox{\hyperlink{actions_8c_aa8b6f82aed0ab9eeab272190e575b9e2}{action\+\_\+play\+\_\+pause}} (void)
+\item 
+void \mbox{\hyperlink{actions_8c_a937f4a9ade0254c1ff7aea7a682c2cd0}{action\+\_\+clear\+\_\+grid}} (void)
+\item 
+void \mbox{\hyperlink{actions_8c_ac42ebabda5e72c36da2608877b518bfe}{action\+\_\+save\+\_\+grid}} (void)
+\begin{DoxyCompactList}\small\item\em Sauvegarde la grille actuelle dans la mémoire Flash. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{actions_8c_abf57de03c7fc2add00bdc559b90f2e62}{action\+\_\+load\+\_\+grid}} (void)
+\begin{DoxyCompactList}\small\item\em Charge la grille depuis la mémoire Flash. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{actions_8c_aadb3b0ea37cd389d4dcea88c55ca9124}{action\+\_\+open\+\_\+menu}} (void)
+\item 
+void \mbox{\hyperlink{actions_8c_a49ce93778b87ac9406cebf960dae7099}{action\+\_\+open\+\_\+patterns\+\_\+menu}} (void)
+\item 
+void \mbox{\hyperlink{actions_8c_abeb13db295adea19da4a09456f58d061}{action\+\_\+create\+\_\+patterns}} (void)
+\item 
+void \mbox{\hyperlink{actions_8c_a01612a351b76c9214cc7a6133c587081}{action\+\_\+to\+\_\+do}} (\mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\+\_\+actions\+\_\+e}} \mbox{\hyperlink{gameoflife_8c_a9b2291ad5bd77e04a695e459dd77a344}{action}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structgrid__t}{grid\+\_\+t}} \mbox{\hyperlink{actions_8c_aab090ad7eb6b25c2100d8e2328a7e5c7}{grid0}}
+\begin{DoxyCompactList}\small\item\em Gère les différentes actions disponibles et effectuées par l\textquotesingle{}utilisateur. @\+Author \+: Valéry et Neïssa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{actions_8c_a937f4a9ade0254c1ff7aea7a682c2cd0}\label{actions_8c_a937f4a9ade0254c1ff7aea7a682c2cd0} 
+\index{actions.c@{actions.c}!action\_clear\_grid@{action\_clear\_grid}}
+\index{action\_clear\_grid@{action\_clear\_grid}!actions.c@{actions.c}}
+\doxysubsubsection{\texorpdfstring{action\_clear\_grid()}{action\_clear\_grid()}}
+{\footnotesize\ttfamily void action\+\_\+clear\+\_\+grid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Action \+: efface toutes les cellules de la grille Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_a937f4a9ade0254c1ff7aea7a682c2cd0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_a937f4a9ade0254c1ff7aea7a682c2cd0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8c_abeb13db295adea19da4a09456f58d061}\label{actions_8c_abeb13db295adea19da4a09456f58d061} 
+\index{actions.c@{actions.c}!action\_create\_patterns@{action\_create\_patterns}}
+\index{action\_create\_patterns@{action\_create\_patterns}!actions.c@{actions.c}}
+\doxysubsubsection{\texorpdfstring{action\_create\_patterns()}{action\_create\_patterns()}}
+{\footnotesize\ttfamily void action\+\_\+create\+\_\+patterns (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Action \+: permet de choisir un pattern à afficher Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_abeb13db295adea19da4a09456f58d061_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_abeb13db295adea19da4a09456f58d061_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8c_abf57de03c7fc2add00bdc559b90f2e62}\label{actions_8c_abf57de03c7fc2add00bdc559b90f2e62} 
+\index{actions.c@{actions.c}!action\_load\_grid@{action\_load\_grid}}
+\index{action\_load\_grid@{action\_load\_grid}!actions.c@{actions.c}}
+\doxysubsubsection{\texorpdfstring{action\_load\_grid()}{action\_load\_grid()}}
+{\footnotesize\ttfamily void action\+\_\+load\+\_\+grid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Charge la grille depuis la mémoire Flash. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{actions_8c_abf57de03c7fc2add00bdc559b90f2e62_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8c_aadb3b0ea37cd389d4dcea88c55ca9124}\label{actions_8c_aadb3b0ea37cd389d4dcea88c55ca9124} 
+\index{actions.c@{actions.c}!action\_open\_menu@{action\_open\_menu}}
+\index{action\_open\_menu@{action\_open\_menu}!actions.c@{actions.c}}
+\doxysubsubsection{\texorpdfstring{action\_open\_menu()}{action\_open\_menu()}}
+{\footnotesize\ttfamily void action\+\_\+open\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Action \+: ouvre le menu Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_aadb3b0ea37cd389d4dcea88c55ca9124_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_aadb3b0ea37cd389d4dcea88c55ca9124_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8c_a49ce93778b87ac9406cebf960dae7099}\label{actions_8c_a49ce93778b87ac9406cebf960dae7099} 
+\index{actions.c@{actions.c}!action\_open\_patterns\_menu@{action\_open\_patterns\_menu}}
+\index{action\_open\_patterns\_menu@{action\_open\_patterns\_menu}!actions.c@{actions.c}}
+\doxysubsubsection{\texorpdfstring{action\_open\_patterns\_menu()}{action\_open\_patterns\_menu()}}
+{\footnotesize\ttfamily void action\+\_\+open\+\_\+patterns\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Pour choisir un pattern précis ! Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_a49ce93778b87ac9406cebf960dae7099_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_a49ce93778b87ac9406cebf960dae7099_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8c_aa8b6f82aed0ab9eeab272190e575b9e2}\label{actions_8c_aa8b6f82aed0ab9eeab272190e575b9e2} 
+\index{actions.c@{actions.c}!action\_play\_pause@{action\_play\_pause}}
+\index{action\_play\_pause@{action\_play\_pause}!actions.c@{actions.c}}
+\doxysubsubsection{\texorpdfstring{action\_play\_pause()}{action\_play\_pause()}}
+{\footnotesize\ttfamily void action\+\_\+play\+\_\+pause (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Action \+: jouer / mettre en pause la simulation Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_aa8b6f82aed0ab9eeab272190e575b9e2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_aa8b6f82aed0ab9eeab272190e575b9e2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8c_ac42ebabda5e72c36da2608877b518bfe}\label{actions_8c_ac42ebabda5e72c36da2608877b518bfe} 
+\index{actions.c@{actions.c}!action\_save\_grid@{action\_save\_grid}}
+\index{action\_save\_grid@{action\_save\_grid}!actions.c@{actions.c}}
+\doxysubsubsection{\texorpdfstring{action\_save\_grid()}{action\_save\_grid()}}
+{\footnotesize\ttfamily void action\+\_\+save\+\_\+grid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Sauvegarde la grille actuelle dans la mémoire Flash. 
+
+VÉ\+RIFIEZ IMPÉ\+RATIVEMENT que l\textquotesingle{}adresse 0x0801\+C000 et les 3 pages suivantes (0x0801\+C000 à 0x0801\+E7\+FF) sont libres de tout code de votre firmware. UN EFFACEMENT ICI PEUT CORROMPRE VOTRE MICROCONTRÔ\+LEUR. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{actions_8c_ac42ebabda5e72c36da2608877b518bfe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_ac42ebabda5e72c36da2608877b518bfe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8c_a01612a351b76c9214cc7a6133c587081}\label{actions_8c_a01612a351b76c9214cc7a6133c587081} 
+\index{actions.c@{actions.c}!action\_to\_do@{action\_to\_do}}
+\index{action\_to\_do@{action\_to\_do}!actions.c@{actions.c}}
+\doxysubsubsection{\texorpdfstring{action\_to\_do()}{action\_to\_do()}}
+{\footnotesize\ttfamily void action\+\_\+to\+\_\+do (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\+\_\+actions\+\_\+e}}}]{action }\end{DoxyParamCaption})}
+
+Sélectionne l\textquotesingle{}action à effectuer. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_a01612a351b76c9214cc7a6133c587081_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_a01612a351b76c9214cc7a6133c587081_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8c_ab74602ad046a6951f279d206ed53e376}\label{actions_8c_ab74602ad046a6951f279d206ed53e376} 
+\index{actions.c@{actions.c}!TRANSITION\_apply\_with\_grid@{TRANSITION\_apply\_with\_grid}}
+\index{TRANSITION\_apply\_with\_grid@{TRANSITION\_apply\_with\_grid}!actions.c@{actions.c}}
+\doxysubsubsection{\texorpdfstring{TRANSITION\_apply\_with\_grid()}{TRANSITION\_apply\_with\_grid()}}
+{\footnotesize\ttfamily void TRANSITION\+\_\+apply\+\_\+with\+\_\+grid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgrid__t}{grid\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{grid,  }\item[{uint16\+\_\+t}]{color,  }\item[{uint16\+\_\+t}]{step\+\_\+delay }\end{DoxyParamCaption})}
+
+Applique une transition après mise à jour logique Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_ab74602ad046a6951f279d206ed53e376_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_ab74602ad046a6951f279d206ed53e376_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{actions_8c_a1ce114ea5b1f84857f72c9fdf71f23ab}\label{actions_8c_a1ce114ea5b1f84857f72c9fdf71f23ab} 
+\index{actions.c@{actions.c}!TRANSITION\_vertical\_wipe@{TRANSITION\_vertical\_wipe}}
+\index{TRANSITION\_vertical\_wipe@{TRANSITION\_vertical\_wipe}!actions.c@{actions.c}}
+\doxysubsubsection{\texorpdfstring{TRANSITION\_vertical\_wipe()}{TRANSITION\_vertical\_wipe()}}
+{\footnotesize\ttfamily void TRANSITION\+\_\+vertical\+\_\+wipe (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{color,  }\item[{uint16\+\_\+t}]{step\+\_\+delay }\end{DoxyParamCaption})}
+
+Fonction pour effectuer une transition verticale Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{actions_8c_a1ce114ea5b1f84857f72c9fdf71f23ab_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{actions_8c_aab090ad7eb6b25c2100d8e2328a7e5c7}\label{actions_8c_aab090ad7eb6b25c2100d8e2328a7e5c7} 
+\index{actions.c@{actions.c}!grid0@{grid0}}
+\index{grid0@{grid0}!actions.c@{actions.c}}
+\doxysubsubsection{\texorpdfstring{grid0}{grid0}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgrid__t}{grid\+\_\+t}} grid0\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Gère les différentes actions disponibles et effectuées par l\textquotesingle{}utilisateur. @\+Author \+: Valéry et Neïssa. 
+

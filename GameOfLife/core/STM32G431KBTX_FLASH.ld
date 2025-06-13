@@ -49,9 +49,10 @@ MEMORY
   RAM            (xrw)   : ORIGIN = 0x20000000,   LENGTH = 32K
   START          (rx)    : ORIGIN = 0x08000000,   LENGTH = 2K		/*Page 0*/
   BOOTLOADER     (rx)    : ORIGIN = 0x08000800,   LENGTH = 2K		/*Page 1 */
-  FLASH          (rx)    : ORIGIN = 0x08001000,   LENGTH = 122K		/*Pages 2 to 62*/
-  VIRTUAL_EEPROM (rx)    : ORIGIN = 0x0801F800,   LENGTH = 2K		/*Page 63*/
+  FLASH          (rx)    : ORIGIN = 0x08001000,   LENGTH = 108K		/*Pages 2 to 62*/
+  VIRTUAL_EEPROM (rx)    : ORIGIN = 0x0801C000,   LENGTH = 16K		/*Page 63*/
 }
+
 
 /* Sections */
 SECTIONS

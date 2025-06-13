@@ -1,0 +1,56 @@
+\chapter{Game of Life}
+\hypertarget{index}{}\label{index}\index{Game of Life@{Game of Life}}
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+ Projet \+: Conway\textquotesingle{}s Game of Life sur STM32\+G4
+
+Ce projet implémente le célèbre "{}\+Jeu de la vie"{} de Conway sur une carte microcontrôleur STM32\+G4, interfacée avec un écran TFT tactile. Il offre une interface utilisateur interactive pour manipuler la grille et observer l\textquotesingle{}évolution des cellules selon les règles du jeu. Table des matières \begin{DoxyVerb}Description du projet
+Fonctionnalités
+Matériel requis
+Environnement de développement
+Utilisation
+Structure du projet
+Crédits
+\end{DoxyVerb}
+
+\begin{DoxyEnumerate}
+\item Description du projet
+\end{DoxyEnumerate}
+
+Le Jeu de la vie de Conway est un automate cellulaire zéro-\/joueur, ce qui signifie que son évolution est déterminée par son état initial, sans aucune autre intervention. Ce projet permet d\textquotesingle{}interagir avec la grille initiale sur un écran tactile, puis de lancer la simulation pour observer les "{}générations"{} de cellules.
+\begin{DoxyEnumerate}
+\item Fonctionnalités
+
+Simulation du Jeu de la Vie \+: Application des règles classiques pour l\textquotesingle{}évolution des cellules. Pause/\+Lecture \+: Mettre en pause ou reprendre la simulation. Modification interactive de la grille \+: Activer ou désactiver des cellules individuellement via l\textquotesingle{}écran tactile lorsque la simulation est en pause. Patterns prédéfinis \+: Insérer des configurations de cellules connues (ex\+: Box, Glider, Pulsar, Vaisseaux, etc.) via un menu dédié. Effacement de la grille \+: Réinitialiser toute la grille à des cellules mortes. Système de menus \+: Navigation intuitive entre les options principales et la sélection de patterns à l\textquotesingle{}aide des boutons. Gestion du rafraîchissement d\textquotesingle{}écran \+: Optimisation de l\textquotesingle{}affichage pour une expérience fluide.
+\item Matériel requis
+
+Carte de développement STM32\+G4 (par exemple, Nucleo STM32\+G431\+KB). Écran TFT ILI9341 . Contrôleur tactile XPT2046 (souvent intégré à l\textquotesingle{}écran TFT). Boutons physiques (Down, Center) connectés selon la configuration définie dans \doxylink{button_8h}{button.\+h}/button.c.
+\item Environnement de développement
+
+IDE \+: STM32\+Cube\+IDE (recommandé pour les projets STM32). Bibliothèques \+: STM32\+Cube HAL/\+LL Drivers pour STM32\+G4. Outils \+: make pour la compilation, doxygen pour la génération de documentation.
+\item Utilisation
+\end{DoxyEnumerate}
+
+Une fois le firmware flashé et le dispositif démarré \+: \begin{DoxyVerb}Écran d'accueil : Le projet affiche "Conway's Game Of Life". Appuyez sur le bouton Center pour commencer.
+Mode édition/Pause : La grille s'affiche.
+    Tactile : Touchez n'importe quelle cellule sur l'écran pour inverser son état (vivante/morte).
+    Bouton Center : Appuyez sur le bouton Center pour basculer entre le mode PLAY (la simulation tourne) et le mode PAUSE (vous pouvez éditer la grille).
+Menus :
+    Lorsque la simulation est en pause (ou au démarrage), appuyez sur le bouton Center (si configuré ainsi) pour ouvrir le menu principal.
+    Utilisez le bouton Down pour naviguer entre les options du menu.
+    Appuyez sur le bouton Center pour valider une option.
+    Options du menu principal :
+        Play/Pause : Bascule l'état de la simulation.
+        Clear Grid : Efface toutes les cellules de la grille.
+        Save Grid : (Fonctionnalité de sauvegarde - le comportement exact dépend de votre implémentation).
+        Select Pattern : Accède au menu de sélection de patterns.
+    Menu de sélection de patterns :
+        Utilisez le bouton Down pour choisir un pattern.
+        Appuyez sur le bouton Center pour appliquer le pattern sur la grille (généralement au centre ou à une position prédéfinie).
+\end{DoxyVerb}
+
+\begin{DoxyEnumerate}
+\item Structure du projet (aperçu)
+
+app/ \+: Fichiers principaux (ex\+: \doxylink{gameoflife_8h}{gameoflife.\+h}, \doxylink{actions_8h}{actions.\+h}, \doxylink{menu_8h}{menu.\+h}). Drivers/ \+: Fichiers liés aux drivers (HAL, ILI9341, XPT2046, etc.). \doxylink{config_8h}{config.\+h} \+: Fichier de configuration globale du projet. Doxyfile \+: Fichier de configuration Doxygen. 
+\end{DoxyEnumerate}

@@ -1,3 +1,6 @@
-../app/menu.c:28:6:MENU_open	1
-../app/menu.c:35:6:MENU_display	3
-../app/menu.c:53:6:MENU_handle_input	9
+../app/menu.c:40:6:MENU_open	1
+../app/menu.c:51:6:MENU_display	3
+../app/menu.c:68:6:MENU_handle_input	9
+../app/menu.c:103:6:PATTERN_MENU_open	1
+../app/menu.c:113:13:PATTERN_MENU_display	3
+../app/menu.c:130:6:PATTERN_MENU_handle_input	5

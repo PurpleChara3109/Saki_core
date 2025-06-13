@@ -1,0 +1,226 @@
+\doxysection{menu.\+h File Reference}
+\hypertarget{menu_8h}{}\label{menu_8h}\index{menu.h@{menu.h}}
+{\ttfamily \#include "{}actions.\+h"{}}\newline
+Include dependency graph for menu.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{menu_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184}{menu\+\_\+e}} \{ \newline
+\mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184ae7b38a01ff45aa7e97a25db08976b11a}{MENU\+\_\+\+PLAY\+\_\+\+PAUSE}}
+, \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184a64fef4f5f80cc6bd70d890444ec8dd9a}{MENU\+\_\+\+CLEAR\+\_\+\+GRID}}
+, \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184aae9b5e2d5e58a921bf261a88fa21829e}{MENU\+\_\+\+SAVE\+\_\+\+GRID}}
+, \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184ada67f8ed3ea3d052c3a048a0e98a6bd6}{MENU\+\_\+\+LOAD\+\_\+\+GRID}}
+, \newline
+\mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184ab1b2bbc31aa3b2c1b3de336010e20e7f}{MENU\+\_\+\+SELECT\+\_\+\+PATTERN}}
+, \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184af278282f4de460ab6987bb27729d9c63}{MENU\+\_\+\+NB}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8h_a155bc8b3600270ca91848e16e416200e}{MENU\+\_\+display}} (void)
+\begin{DoxyCompactList}\small\item\em \+: Fonction pour afficher le menu à l\textquotesingle{}écran On affiche à l\textquotesingle{}écran tous les menus accessibles \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a958d728ad53b9a0ca10f026167c7005a}{MENU\+\_\+open}} (void)
+\begin{DoxyCompactList}\small\item\em Ouvre le menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a3d0d6b257f25ff2d5305cde812ab9ab8}{MENU\+\_\+handle\+\_\+input}} (\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} left, \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} center)
+\begin{DoxyCompactList}\small\item\em Navigue dans le menu avec le bouton du bas. Chaque appui passe à l\textquotesingle{}élément suivant (boucle circulaire). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a08b7e4ff13321fedbea7fdeb5b481b0a}{PATTERN\+\_\+\+MENU\+\_\+handle\+\_\+input}} (\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} nav, \mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}} validate)
+\begin{DoxyCompactList}\small\item\em Navigue dans le menu de choix de patterns avec le bouton du bas. Chaque appui passe à l\textquotesingle{}élément suivant (boucle circulaire). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a827c0a962cd6f5471dc68c781736535e}{PATTERN\+\_\+\+MENU\+\_\+open}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184}{menu\+\_\+e}} \mbox{\hyperlink{menu_8h_a415e9887f2fba8dc615187777ae558c5}{selected\+\_\+menu}}
+\item 
+\mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\+\_\+actions\+\_\+e}} \mbox{\hyperlink{menu_8h_a9b2291ad5bd77e04a695e459dd77a344}{action}}
+\item 
+volatile bool \mbox{\hyperlink{menu_8h_a0fdecda1ad03dfe9115700dcdd964976}{is\+\_\+paused}}
+\item 
+volatile bool \mbox{\hyperlink{menu_8h_aeac3fa565c8e7503faaeda44618bd4b4}{in\+\_\+menu}}
+\item 
+volatile bool \mbox{\hyperlink{menu_8h_a030a818574f03b44c17101df9e60573c}{in\+\_\+pattern\+\_\+menu}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{menu_8h_a546f633dc83c9c0262682ef4a0073184}\label{menu_8h_a546f633dc83c9c0262682ef4a0073184} 
+\index{menu.h@{menu.h}!menu\_e@{menu\_e}}
+\index{menu\_e@{menu\_e}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menu\_e}{menu\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184}{menu\+\_\+e}}}
+
+Crée par Neïssa et Valéry \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MENU\_PLAY\_PAUSE@{MENU\_PLAY\_PAUSE}!menu.h@{menu.h}}\index{menu.h@{menu.h}!MENU\_PLAY\_PAUSE@{MENU\_PLAY\_PAUSE}}}\Hypertarget{menu_8h_a546f633dc83c9c0262682ef4a0073184ae7b38a01ff45aa7e97a25db08976b11a}\label{menu_8h_a546f633dc83c9c0262682ef4a0073184ae7b38a01ff45aa7e97a25db08976b11a} 
+MENU\+\_\+\+PLAY\+\_\+\+PAUSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MENU\_CLEAR\_GRID@{MENU\_CLEAR\_GRID}!menu.h@{menu.h}}\index{menu.h@{menu.h}!MENU\_CLEAR\_GRID@{MENU\_CLEAR\_GRID}}}\Hypertarget{menu_8h_a546f633dc83c9c0262682ef4a0073184a64fef4f5f80cc6bd70d890444ec8dd9a}\label{menu_8h_a546f633dc83c9c0262682ef4a0073184a64fef4f5f80cc6bd70d890444ec8dd9a} 
+MENU\+\_\+\+CLEAR\+\_\+\+GRID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MENU\_SAVE\_GRID@{MENU\_SAVE\_GRID}!menu.h@{menu.h}}\index{menu.h@{menu.h}!MENU\_SAVE\_GRID@{MENU\_SAVE\_GRID}}}\Hypertarget{menu_8h_a546f633dc83c9c0262682ef4a0073184aae9b5e2d5e58a921bf261a88fa21829e}\label{menu_8h_a546f633dc83c9c0262682ef4a0073184aae9b5e2d5e58a921bf261a88fa21829e} 
+MENU\+\_\+\+SAVE\+\_\+\+GRID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MENU\_LOAD\_GRID@{MENU\_LOAD\_GRID}!menu.h@{menu.h}}\index{menu.h@{menu.h}!MENU\_LOAD\_GRID@{MENU\_LOAD\_GRID}}}\Hypertarget{menu_8h_a546f633dc83c9c0262682ef4a0073184ada67f8ed3ea3d052c3a048a0e98a6bd6}\label{menu_8h_a546f633dc83c9c0262682ef4a0073184ada67f8ed3ea3d052c3a048a0e98a6bd6} 
+MENU\+\_\+\+LOAD\+\_\+\+GRID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MENU\_SELECT\_PATTERN@{MENU\_SELECT\_PATTERN}!menu.h@{menu.h}}\index{menu.h@{menu.h}!MENU\_SELECT\_PATTERN@{MENU\_SELECT\_PATTERN}}}\Hypertarget{menu_8h_a546f633dc83c9c0262682ef4a0073184ab1b2bbc31aa3b2c1b3de336010e20e7f}\label{menu_8h_a546f633dc83c9c0262682ef4a0073184ab1b2bbc31aa3b2c1b3de336010e20e7f} 
+MENU\+\_\+\+SELECT\+\_\+\+PATTERN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MENU\_NB@{MENU\_NB}!menu.h@{menu.h}}\index{menu.h@{menu.h}!MENU\_NB@{MENU\_NB}}}\Hypertarget{menu_8h_a546f633dc83c9c0262682ef4a0073184af278282f4de460ab6987bb27729d9c63}\label{menu_8h_a546f633dc83c9c0262682ef4a0073184af278282f4de460ab6987bb27729d9c63} 
+MENU\+\_\+\+NB&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8h_a155bc8b3600270ca91848e16e416200e}\label{menu_8h_a155bc8b3600270ca91848e16e416200e} 
+\index{menu.h@{menu.h}!MENU\_display@{MENU\_display}}
+\index{MENU\_display@{MENU\_display}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{MENU\_display()}{MENU\_display()}}
+{\footnotesize\ttfamily void MENU\+\_\+display (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\+: Fonction pour afficher le menu à l\textquotesingle{}écran On affiche à l\textquotesingle{}écran tous les menus accessibles 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8h_a155bc8b3600270ca91848e16e416200e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8h_a3d0d6b257f25ff2d5305cde812ab9ab8}\label{menu_8h_a3d0d6b257f25ff2d5305cde812ab9ab8} 
+\index{menu.h@{menu.h}!MENU\_handle\_input@{MENU\_handle\_input}}
+\index{MENU\_handle\_input@{MENU\_handle\_input}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{MENU\_handle\_input()}{MENU\_handle\_input()}}
+{\footnotesize\ttfamily void MENU\+\_\+handle\+\_\+input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}}}]{nav,  }\item[{\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}}}]{validate }\end{DoxyParamCaption})}
+
+
+
+Navigue dans le menu avec le bouton du bas. Chaque appui passe à l\textquotesingle{}élément suivant (boucle circulaire). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nav} & pour naviguer dans le menu \\
+\hline
+{\em validate} & pour sélectionner le menu \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{menu_8h_a3d0d6b257f25ff2d5305cde812ab9ab8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8h_a958d728ad53b9a0ca10f026167c7005a}\label{menu_8h_a958d728ad53b9a0ca10f026167c7005a} 
+\index{menu.h@{menu.h}!MENU\_open@{MENU\_open}}
+\index{MENU\_open@{MENU\_open}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{MENU\_open()}{MENU\_open()}}
+{\footnotesize\ttfamily void MENU\+\_\+open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Ouvre le menu. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{menu_8h_a958d728ad53b9a0ca10f026167c7005a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8h_a958d728ad53b9a0ca10f026167c7005a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8h_a08b7e4ff13321fedbea7fdeb5b481b0a}\label{menu_8h_a08b7e4ff13321fedbea7fdeb5b481b0a} 
+\index{menu.h@{menu.h}!PATTERN\_MENU\_handle\_input@{PATTERN\_MENU\_handle\_input}}
+\index{PATTERN\_MENU\_handle\_input@{PATTERN\_MENU\_handle\_input}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{PATTERN\_MENU\_handle\_input()}{PATTERN\_MENU\_handle\_input()}}
+{\footnotesize\ttfamily void PATTERN\+\_\+\+MENU\+\_\+handle\+\_\+input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}}}]{nav,  }\item[{\mbox{\hyperlink{button_8h_a55921af376e04c16ef2e31ebfbbd066a}{button\+\_\+e}}}]{validate }\end{DoxyParamCaption})}
+
+
+
+Navigue dans le menu de choix de patterns avec le bouton du bas. Chaque appui passe à l\textquotesingle{}élément suivant (boucle circulaire). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nav} & pour naviguer dans le menu \\
+\hline
+{\em validate} & pour sélectionner le patterns \\
+\hline
+\end{DoxyParams}
+\Hypertarget{menu_8h_a827c0a962cd6f5471dc68c781736535e}\label{menu_8h_a827c0a962cd6f5471dc68c781736535e} 
+\index{menu.h@{menu.h}!PATTERN\_MENU\_open@{PATTERN\_MENU\_open}}
+\index{PATTERN\_MENU\_open@{PATTERN\_MENU\_open}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{PATTERN\_MENU\_open()}{PATTERN\_MENU\_open()}}
+{\footnotesize\ttfamily void PATTERN\+\_\+\+MENU\+\_\+open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Ouvre le menu de choix de patterns. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8h_a827c0a962cd6f5471dc68c781736535e_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{menu_8h_a9b2291ad5bd77e04a695e459dd77a344}\label{menu_8h_a9b2291ad5bd77e04a695e459dd77a344} 
+\index{menu.h@{menu.h}!action@{action}}
+\index{action@{action}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{action}{action}}
+{\footnotesize\ttfamily \mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\+\_\+actions\+\_\+e}} action\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{menu_8h_aeac3fa565c8e7503faaeda44618bd4b4}\label{menu_8h_aeac3fa565c8e7503faaeda44618bd4b4} 
+\index{menu.h@{menu.h}!in\_menu@{in\_menu}}
+\index{in\_menu@{in\_menu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{in\_menu}{in\_menu}}
+{\footnotesize\ttfamily volatile bool in\+\_\+menu\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{menu_8h_a030a818574f03b44c17101df9e60573c}\label{menu_8h_a030a818574f03b44c17101df9e60573c} 
+\index{menu.h@{menu.h}!in\_pattern\_menu@{in\_pattern\_menu}}
+\index{in\_pattern\_menu@{in\_pattern\_menu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{in\_pattern\_menu}{in\_pattern\_menu}}
+{\footnotesize\ttfamily volatile bool in\+\_\+pattern\+\_\+menu\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{menu_8h_a0fdecda1ad03dfe9115700dcdd964976}\label{menu_8h_a0fdecda1ad03dfe9115700dcdd964976} 
+\index{menu.h@{menu.h}!is\_paused@{is\_paused}}
+\index{is\_paused@{is\_paused}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{is\_paused}{is\_paused}}
+{\footnotesize\ttfamily volatile bool is\+\_\+paused\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{menu_8h_a415e9887f2fba8dc615187777ae558c5}\label{menu_8h_a415e9887f2fba8dc615187777ae558c5} 
+\index{menu.h@{menu.h}!selected\_menu@{selected\_menu}}
+\index{selected\_menu@{selected\_menu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{selected\_menu}{selected\_menu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{menu_8h_a546f633dc83c9c0262682ef4a0073184}{menu\+\_\+e}} selected\+\_\+menu\hspace{0.3cm}{\ttfamily [extern]}}
+

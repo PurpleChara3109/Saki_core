@@ -4,6 +4,8 @@
  *  Created on: Feb 12, 2024
  *      Author: Nirgal
  */
+#include <stdbool.h>
+#include <stdint.h>
 
 #ifndef GAMEOFLIFE_H_
 #define GAMEOFLIFE_H_
@@ -47,9 +49,31 @@ typedef struct{
 *
 */
 
+typedef enum
+{
+	PATTERN_BOX,
+	PATTERN_TOAD,
+	PATTERN_BEEHIVE,
+	PATTERN_BLINKER,
+	PATTERN_SHIP,
+	PATTERN_PULSAR,
+	PATTERN_GLIDER_GUN,
+	PATTERN_LIGHT_WEIGHT_SPACESHIP,
+	PATTERN_MIDDLE_WEIGHT_SPACESHIP,
+	PATTERN_HEAVY_WEIGHT_SPACESHIP,
+	PATTERN_QUEEN_BEE_SHUTTLE,
+	PATTERN_PENTADECATHLON,
+	PATTERN_GLIDER,
+	PATTERN_NB
+}pattern_e;
+
+extern pattern_e selected_pattern;
 
 void GAMEOFLIFE_init(void);
 
 void GAMEOFLIFE_process_main(void);
+
+void GAMEOFLIFE_create_pattern(grid_t * grid, uint16_t x, uint16_t y, pattern_e pattern);
+
 
 #endif /* GAMEOFLIFE_H_ */

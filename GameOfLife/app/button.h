@@ -24,20 +24,16 @@
     ACTION_CLEAR_GRID,
     ACTION_SAVE_GRID,
     ACTION_OPEN_MENU,
-    ACTION_OPEN_SETTINGS
-
+	ACTION_SELECT_PATTERNS,
+	ACTION_CREATE_PATTERNS,
  }user_actions_e;
 
  void BUTTONS_init(void);
- void BUTTONS_update(button_e * button_left_event,
-                     button_e * button_right_event,
-                     button_e * button_up_event,
+ void BUTTONS_update(
                      button_e * button_down_event,
                      button_e * button_center_event);
 
- uint8_t BUTTON_left_read(void);
- uint8_t BUTTON_right_read(void);
- uint8_t BUTTON_up_read(void);
+
  uint8_t BUTTON_down_read(void);
  uint8_t BUTTON_center_read(void);
 

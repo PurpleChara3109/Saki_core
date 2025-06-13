@@ -1,0 +1,5 @@
+<map id="MENU_open" name="MENU_open">
+<area shape="rect" id="Node000001" title="Ouvre le menu." alt="" coords="5,5,107,31"/>
+<area shape="rect" id="Node000002" href="$menu_8c.html#a155bc8b3600270ca91848e16e416200e" title=": Fonction pour afficher le menu à l&#39;écran On affiche à l&#39;écran tous les menus accessibles" alt="" coords="155,5,271,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,15,141,15,141,21,107,21"/>
+</map>

@@ -1,0 +1,35 @@
+\doxysection{actions.\+h}
+\hypertarget{actions_8h_source}{}\label{actions_8h_source}\mbox{\hyperlink{actions_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ACTIONS\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ACTIONS\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{button_8h}{button.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gameoflife_8h}{gameoflife.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structgrid__t}{grid\_t}}\ \mbox{\hyperlink{actions_8h_aab090ad7eb6b25c2100d8e2328a7e5c7}{grid0}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{actions_8h_af3d178b460e3ce9eb4bacd7bfa0bc024}{cooldown\_after\_menu}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{gameoflife_8h_a7f2f20e289397546fac2ae282a587a91}{pattern\_e}}\ \mbox{\hyperlink{actions_8h_a0d4413388976a9ff0f953cdc10c48a27}{selected\_pattern}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{actions_8h_a0fdecda1ad03dfe9115700dcdd964976}{is\_paused}};\ \textcolor{comment}{//\ Assurez-\/vous\ que\ c'est\ bien\ la\ même\ variable\ que\ dans\ gameoflife.c}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{actions_8h_aeac3fa565c8e7503faaeda44618bd4b4}{in\_menu}};\ \textcolor{comment}{//\ Assurez-\/vous\ que\ c'est\ bien\ la\ même\ variable\ que\ dans\ gameoflife.c}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{actions_8h_a030a818574f03b44c17101df9e60573c}{in\_pattern\_menu}};}
+\DoxyCodeLine{00016\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ \ prototypes\ des\ fonctions\ présentes\ dans\ actions.c}}
+\DoxyCodeLine{00018\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{actions_8h_aa8b6f82aed0ab9eeab272190e575b9e2}{action\_play\_pause}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{actions_8h_a937f4a9ade0254c1ff7aea7a682c2cd0}{action\_clear\_grid}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{actions_8h_ac42ebabda5e72c36da2608877b518bfe}{action\_save\_grid}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{actions_8h_aadb3b0ea37cd389d4dcea88c55ca9124}{action\_open\_menu}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{actions_8h_a49ce93778b87ac9406cebf960dae7099}{action\_open\_patterns\_menu}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{actions_8h_abeb13db295adea19da4a09456f58d061}{action\_create\_patterns}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{actions_8h_abf57de03c7fc2add00bdc559b90f2e62}{action\_load\_grid}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{actions_8h_a01612a351b76c9214cc7a6133c587081}{action\_to\_do}}(\mbox{\hyperlink{button_8h_a0c0a240d869c5296e83d505383382fae}{user\_actions\_e}}\ \mbox{\hyperlink{gameoflife_8c_a9b2291ad5bd77e04a695e459dd77a344}{action}});}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ACTIONS\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00030\ }
+
+\end{DoxyCode}

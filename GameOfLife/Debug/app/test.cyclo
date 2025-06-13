@@ -1,0 +1,4 @@
+../app/test.c:51:6:TEST_screen	1
+../app/test.c:61:6:TEST_tactile	1
+../app/test.c:72:6:test_log	2
+../app/test.c:82:6:TEST_state_machine_run	23
