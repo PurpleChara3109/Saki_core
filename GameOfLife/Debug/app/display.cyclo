@@ -1,3 +1,0 @@
-../app/display.c:26:6:DISPLAY_init	3
-../app/display.c:41:6:DISPLAY_refresh	6
-../app/display.c:80:6:DISPLAY_sync_with_grid	3

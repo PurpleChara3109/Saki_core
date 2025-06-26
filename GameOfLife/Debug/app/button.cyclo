@@ -1,5 +1,0 @@
-../app/button.c:32:6:BUTTONS_init	1
-../app/button.c:41:6:BUTTONS_process_ms	2
-../app/button.c:50:9:BUTTON_down_read	1
-../app/button.c:55:9:BUTTON_center_read	1
-../app/button.c:64:6:BUTTONS_update	6

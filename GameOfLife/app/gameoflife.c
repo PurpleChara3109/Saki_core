@@ -196,7 +196,7 @@ void GAMEOFLIFE_state_machine(void)
 			MENU_handle_input(down, center); // Gère la navigation et sélection du menu
 
 			// Traitement de l'action sélectionnée
-			switch(action)
+			switch(action) // 'action' est défini dans actions.h, géré par MENU_handle_input
 			{
 				case ACTION_PLAY_PAUSE:
 					action_play_pause(); // Cela va inverser is_paused_global
