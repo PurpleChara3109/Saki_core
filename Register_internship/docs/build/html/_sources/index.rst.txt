@@ -1,0 +1,21 @@
+.. Internship Tracker documentation master file, created by
+   sphinx-quickstart on Tue Jul  1 04:22:25 2025.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Internship Tracker's documentation!
+==============================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+	
+   internship_mod	
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

@@ -1,0 +1,7 @@
+Course Tracking Module
+========================
+
+.. automodule:: register_internship
+   :members:
+   :undoc-members:
+   :show-inheritance:
