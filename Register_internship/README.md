@@ -10,9 +10,6 @@ A simple command-line Python application to help you keep track of internships y
   - [Installation](#installation)
   - [Usage](#usage)
 - [CSV File Format](#csv-file-format)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -37,7 +34,7 @@ You need Python 3 installed on your system.
 
 No special installation steps are required beyond having Python 3. This project uses only Python's built-in modules (`csv`, `os`).
 
-1.  **Clone the repository (or download the files):**
+  **Clone the repository (or download the files):**
     If your project is in a Git repository, use:
     ```bash
     git clone <your-repository-url>
@@ -45,31 +42,14 @@ No special installation steps are required beyond having Python 3. This project 
     ```
     Otherwise, simply navigate to the directory where you saved `internship_tracker.py` (or whatever you named your main Python script) and the `README.md` file.
 
-2.  **Create a Virtual Environment (Recommended but not strictly necessary for this project):**
-    While this project doesn't have external dependencies, using a virtual environment is a good practice for all Python projects.
-    ```bash
-    python3 -m venv .venv
-    ```
-
-3.  **Activate the Virtual Environment:**
-    * **On macOS / Linux:**
-        ```bash
-        source .venv/bin/activate
-        ```
-    * **On Windows:**
-        ```bash
-        .\.venv\Scripts\activate
-        ```
-
 ### Usage
 
 Once you have Python set up and your environment activated (if you created one):
 
 1.  **Run the script:**
     ```bash
-    python3 your_main_script_name.py
+    python3 register_intership.py
     ```
-    (Replace `your_main_script_name.py` with the actual name of your Python file, e.g., `internship_tracker.py` or `main.py`).
 
 2.  **Follow the menu prompts:**
     The program will present a menu with options to add new internships, view existing ones, or exit.
