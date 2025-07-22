@@ -15,14 +15,14 @@ L'idée derrière ce dépôt est double :
 
 ---
 
-## Ce que vous y trouverez 🎯
+## Ce que vous y trouverez 
 
 * **Mini projet** : Petits projets que j'ai réalisés pour mettre en pratique mes connaissances ou explorer de nouvelles technologies. Chaque projet aura son propre dossier avec un README expliquant son objectif et son fonctionnement.
 * **Game of Life** : Un projet innovant, et l'un de mes premiers ^^
 
 ---
 
-## Comment contribuer ou poser des questions ? 🤝
+## Comment contribuer ou poser des questions ? 
 
 Votre feedback est le bienvenu ! Si vous avez des questions, des suggestions d'amélioration, ou si vous trouvez une erreur (nous sommes tous humains !), n'hésitez pas à :
 
@@ -33,7 +33,7 @@ Je suis également ouvert aux discussions et aux échanges de connaissances. N'h
 
 ---
 
-## Technologies utilisées (non exhaustif) 🛠️
+## Technologies utilisées (non exhaustif) 
 
 Cette section sera remplie en fonction du contenu ajouté. Voici quelques exemples :
 
@@ -43,4 +43,4 @@ Cette section sera remplie en fonction du contenu ajouté. Voici quelques exempl
 
 ---
 
-Merci de votre visite et bonne exploration ! 😊
+Merci de votre visite et bonne exploration ! 
