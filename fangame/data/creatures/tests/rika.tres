@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CreatureData" load_steps=5 format=3 uid="uid://ba8uyt8cbmx46"]
+
+[ext_resource type="Script" path="res://scripts/MoveData.gd" id="1_dbfmc"]
+[ext_resource type="Script" path="res://scripts/CreatureData.gd" id="2_iq83e"]
+[ext_resource type="Resource" uid="uid://hqvclr26xla6" path="res://data/moves/test/bloom.tres" id="2_vvay2"]
+[ext_resource type="Resource" uid="uid://bv2idqrbf38xt" path="res://data/moves/test/tomberoche.tres" id="3_0dr54"]
+
+[resource]
+script = ExtResource("2_iq83e")
+species_name = "Rika"
+signatures = Array[StringName]([&"roche"])
+base_hp = 40
+base_attack = 45
+base_defense = 35
+base_speed = 60
+cohesion = 0.15
+reserve_base = 20
+moves = Array[ExtResource("1_dbfmc")]([ExtResource("2_vvay2"), ExtResource("3_0dr54")])

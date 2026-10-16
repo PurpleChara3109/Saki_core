@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MoveData" load_steps=2 format=3 uid="uid://hqvclr26xla6"]
+
+[ext_resource type="Script" path="res://scripts/MoveData.gd" id="1_skjbx"]
+
+[resource]
+script = ExtResource("1_skjbx")
+move_name = "Bloom"
+signature = &"normal"
+forme = 1
+palier = 0
+power = 20
+accuracy = 100

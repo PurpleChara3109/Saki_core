@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CreatureData" load_steps=5 format=3 uid="uid://cu4toks8sppgp"]
+
+[ext_resource type="Script" path="res://scripts/MoveData.gd" id="1_3yrap"]
+[ext_resource type="Script" path="res://scripts/CreatureData.gd" id="2_ly6wt"]
+[ext_resource type="Resource" uid="uid://hqvclr26xla6" path="res://data/moves/test/bloom.tres" id="2_wsdpx"]
+[ext_resource type="Resource" uid="uid://d28wffgueiepg" path="res://data/moves/test/hyperbeam.tres" id="3_aprt4"]
+
+[resource]
+script = ExtResource("2_ly6wt")
+species_name = "Pikachu"
+signatures = Array[StringName]([&"electrique"])
+base_hp = 45
+base_attack = 50
+base_defense = 55
+base_speed = 30
+cohesion = 0.2
+reserve_base = 20
+moves = Array[ExtResource("1_3yrap")]([ExtResource("2_wsdpx"), ExtResource("3_aprt4")])
