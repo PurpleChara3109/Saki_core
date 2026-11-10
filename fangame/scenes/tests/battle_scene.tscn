@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsvjkwxa2snc4"]
+
+[ext_resource type="Script" path="res://scripts/BattleScene.gd" id="1_0jxyv"]
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0jxyv")
+
+[node name="Marge" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Colonnes" type="VBoxContainer" parent="Marge"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Foe" type="VBoxContainer" parent="Marge/Colonnes"]
+layout_mode = 2
+
+[node name="FoeName" type="Label" parent="Marge/Colonnes/Foe"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HPFoe" type="ProgressBar" parent="Marge/Colonnes/Foe"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FoeReserve" type="ProgressBar" parent="Marge/Colonnes/Foe"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Journal" type="Label" parent="Marge/Colonnes"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="Player" type="VBoxContainer" parent="Marge/Colonnes"]
+layout_mode = 2
+
+[node name="PlayerName" type="Label" parent="Marge/Colonnes/Player"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HPPlayer" type="ProgressBar" parent="Marge/Colonnes/Player"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PlayerReserve" type="ProgressBar" parent="Marge/Colonnes/Player"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PlayerStatus" type="Label" parent="Marge/Colonnes/Player"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Actions" type="HBoxContainer" parent="Marge/Colonnes"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Surge" type="CheckButton" parent="Marge/Colonnes"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Surge"

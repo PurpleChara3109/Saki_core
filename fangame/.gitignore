@@ -4,3 +4,5 @@
 
 # Exports
 build/
+
+.claude/
