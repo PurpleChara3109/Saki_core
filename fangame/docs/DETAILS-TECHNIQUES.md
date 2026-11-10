@@ -1,11 +1,6 @@
-
 # Pokémon Anima — Détails techniques et code
 
-> Copie du 9 novembre 2026 (révision 340). Document vivant : https://claude.ai/artifact/Mjwsd8xssPv3975vBDLgW2 — en cas de différence, le document vivant fait foi. Les encarts (schémas) ne sont pas reproduits.
-
-2026-10-13 · Tarah Mondesir
-
-Ce document regroupe les règles chiffrées et le code du jeu. L'univers, l'histoire et les personnages sont dans le document [Pokémon Anima — Univers et histoire](https://claude.ai/code/artifact/6476a490-867c-4f6a-bdc0-a992857b07fe).
+Ce document regroupe les règles chiffrées et le code du jeu. 
 
 ## Paramètres de départ
 
@@ -813,19 +808,19 @@ Ces règles valent pour tout nouveau fichier et pour chaque fichier qu'on retouc
 
 - Identifiants, textes affichés, messages du journal, sorties de test et commentaires sont en anglais. Les termes du jeu reprennent l'équivalent anglais du Lexique de la bible :
 
-| Terme du jeu          | Dans le code                                                  |
-| --------------------- | ------------------------------------------------------------- |
-| Réserve               | `pool` (classe `AnimaPool`), `reserve_max`                    |
-| Flux                  | `flow`                                                        |
-| Régénération          | `regen`                                                       |
-| Instabilité, Cohésion | `instability`, `cohesion`                                     |
-| Poussée               | `surge`                                                       |
-| Jauge, Marque         | `gauge`, `mark`                                               |
-| Résidu, Lien          | `residue`, `bond`                                             |
-| Dresseur              | `trainer`                                                     |
-| Paliers de coût       | `Breath`, `Standard`, `Heavy`, `Ultimate`                     |
-| Formes                | `Impact`, `Jet`, `Link`                                       |
-| Étapes du tour        | `INTENT`, `SHAPING`, `EMISSION`, `RESOLUTION`, `END_OF_TURN` |
+| Terme du jeu            | Dans le code                                                           |
+| ----------------------- | ---------------------------------------------------------------------- |
+| Réserve                | `pool` (classe `AnimaPool`), `reserve_max`                       |
+| Flux                    | `flow`                                                               |
+| Régénération         | `regen`                                                              |
+| Instabilité, Cohésion | `instability`, `cohesion`                                          |
+| Poussée                | `surge`                                                              |
+| Jauge, Marque           | `gauge`, `mark`                                                    |
+| Résidu, Lien           | `residue`, `bond`                                                  |
+| Dresseur                | `trainer`                                                            |
+| Paliers de coût        | `Breath`, `Standard`, `Heavy`, `Ultimate`                      |
+| Formes                  | `Impact`, `Jet`, `Link`                                          |
+| Étapes du tour         | `INTENT`, `SHAPING`, `EMISSION`, `RESOLUTION`, `END_OF_TURN` |
 
 - Exceptions, parce que ces noms sont enregistrés dans tes fichiers : les champs `forme` et `palier` de `MoveData`, et les noms de nœuds déjà utilisés par une scène. Renommer un champ `@export` efface sa valeur dans tous les `.tres` existants. Les libellés d'un `@export_enum` peuvent en revanche changer sans risque, car le `.tres` n'enregistre que le numéro.
 - Conventions Godot : `PascalCase` pour les `class_name`, les fichiers de script et les nœuds ; `snake_case` pour les fonctions, les variables et les fichiers `.tres` et `.tscn` ; `UPPER_SNAKE_CASE` pour les constantes et les valeurs d'enum ; préfixe `_` pour ce qui est privé.
@@ -870,16 +865,16 @@ Ces règles valent pour tout nouveau fichier et pour chaque fichier qu'on retouc
 
 **Écarts actuels à corriger**
 
-| Écart                                  | Où                                                                                                                                                                                                    | Correction                                                                                                                                                                    |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Identifiants en français               | `AnimaPool.debit()` et `reflux()` ; états `INTENTION`, `MISE_EN_FORME`, `FIN_DE_TOUR` et variable `overcharge` dans `BattleManager` ; libellés `Souffle`, `Puissant`, `Ultime`, `Lien` de `MoveData` ; `overcharge_box` dans `BattleScene` | `flow()`, `regen()`, `INTENT`, `SHAPING`, `END_OF_TURN`, `surge`, `Breath`, `Heavy`, `Ultimate`, `Link`, `surge_box`                                                          |
-| Textes et commentaires en français     | `BattleScene.gd`, `AnimaTest.gd`, `BattleManager.gd`, `Trainer.gd`, `TrainerTest.gd`, et les blocs Trainer et TrainerTest de ce document                                                              | Traduire en anglais                                                                                                                                                           |
-| Espaces au lieu de tabulations         | `AnimaPool`, `AnimaTest`, `BattleManager`, `BattleTest`, `CreatureData`, `MoveData`, `Player`, `Trainer`, `TrainerTest`                                                                               | *Convert Indentation to Tabs*                                                                                                                                                 |
-| Nom de fichier différent de la classe  | `Combattant.gd`                                                                                                                                                                                       | Renommer en `Combatant.gd` depuis le panneau FileSystem de Godot, qui met à jour les références                                                                                |
-| Lancer d'un coup écrit deux fois       | `BattleManager._shape_move()` et `Combatant.cast()`                                                                                                                                                   | Fusionner sur `Combatant.cast()`                                                                                                                                              |
-| Résultat de lancer en chaîne           | `Combatant.cast()`                                                                                                                                                                                    | Remplacer par un `enum CastResult`                                                                                                                                            |
-| Dossiers de test au nom différent      | `data/moves/test` et `data/creatures/tests`                                                                                                                                                           | `tests/` pour les deux                                                                                                                                                        |
-| Noms et places des scènes              | `test_combat`, `test_data`, `test_deplacement_joueur` ; `trainer_test.tscn` manquante ; `battle_scene.tscn` dans `scenes/tests/`                                                                      | `combat_test`, `data_test`, `player_movement_test` ; créer `trainer_test.tscn` ; déplacer la scène de combat dans `scenes/battle/`. Mettre ensuite à jour le tableau des tests |
+| Écart                                 | Où                                                                                                                                                                                                                                                                      | Correction                                                                                                                                                                                   |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Identifiants en français              | `AnimaPool.debit()` et `reflux()` ; états `INTENTION`, `MISE_EN_FORME`, `FIN_DE_TOUR` et variable `overcharge` dans `BattleManager` ; libellés `Souffle`, `Puissant`, `Ultime`, `Lien` de `MoveData` ; `overcharge_box` dans `BattleScene` | `flow()`, `regen()`, `INTENT`, `SHAPING`, `END_OF_TURN`, `surge`, `Breath`, `Heavy`, `Ultimate`, `Link`, `surge_box`                                                   |
+| Textes et commentaires en français    | `BattleScene.gd`, `AnimaTest.gd`, `BattleManager.gd`, `Trainer.gd`, `TrainerTest.gd`, et les blocs Trainer et TrainerTest de ce document                                                                                                                       | Traduire en anglais                                                                                                                                                                          |
+| Espaces au lieu de tabulations         | `AnimaPool`, `AnimaTest`, `BattleManager`, `BattleTest`, `CreatureData`, `MoveData`, `Player`, `Trainer`, `TrainerTest`                                                                                                                                | *Convert Indentation to Tabs*                                                                                                                                                              |
+| Nom de fichier différent de la classe | `Combattant.gd`                                                                                                                                                                                                                                                        | Renommer en `Combatant.gd` depuis le panneau FileSystem de Godot, qui met à jour les références                                                                                         |
+| Lancer d'un coup écrit deux fois      | `BattleManager._shape_move()` et `Combatant.cast()`                                                                                                                                                                                                                  | Fusionner sur `Combatant.cast()`                                                                                                                                                           |
+| Résultat de lancer en chaîne         | `Combatant.cast()`                                                                                                                                                                                                                                                     | Remplacer par un `enum CastResult`                                                                                                                                                         |
+| Dossiers de test au nom différent     | `data/moves/test` et `data/creatures/tests`                                                                                                                                                                                                                          | `tests/` pour les deux                                                                                                                                                                     |
+| Noms et places des scènes             | `test_combat`, `test_data`, `test_deplacement_joueur` ; `trainer_test.tscn` manquante ; `battle_scene.tscn` dans `scenes/tests/`                                                                                                                             | `combat_test`, `data_test`, `player_movement_test` ; créer `trainer_test.tscn` ; déplacer la scène de combat dans `scenes/battle/`. Mettre ensuite à jour le tableau des tests |
 
 ## Feuille de route du code (démo)
 

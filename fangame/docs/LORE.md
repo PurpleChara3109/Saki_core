@@ -1,10 +1,6 @@
 # Pokémon Anima: Reminiscence — Univers et histoire (partie 1 : vision, règles, univers, histoire)
 
-> Copie du 9 novembre 2026 (révision 687), en deux parties : la partie 2 (Chefs de Relais, Conseil, personnages, décisions, lexique) est dans `claude/bible-anima-2-personnages.md`. Document vivant : https://claude.ai/artifact/DQXd9MNogZZQUjBaMCdRGh — en cas de différence, le document vivant fait foi. Les encarts (schémas) ne sont pas reproduits.
-
-2026-10-13 · Tarah Mondesir
-
-Ce document regroupe l'univers, l'histoire et les personnages. Les règles chiffrées et le code sont dans le document [Pokémon Anima — Détails techniques et code](https://claude.ai/code/artifact/a7f5d3ff-19d6-4624-9b3d-094b2e372847).
+Ce document regroupe l'univers, l'histoire et les personnages. 
 
 **Sommaire**
 

@@ -1,7 +1,4 @@
-
 # Pokémon Anima: Reminiscence — Univers et histoire (partie 2 : personnages, décisions, lexique)
-
-> Suite de `claude/bible-anima-1-univers.md`. Copie du 9 novembre 2026 (révision 687). Document vivant : https://claude.ai/artifact/DQXd9MNogZZQUjBaMCdRGh — en cas de différence, le document vivant fait foi.
 
 ## Personnages : les Chefs de Relais
 
@@ -17,8 +14,7 @@ Les huit Chefs de Relais sont des employés accrédités du Lumeris Consortium, 
   **Ce que j'en fais dans le jeu**
 - **L'Accréditation** : on devient Chef de Relais en battant, devant un jury du Consortium, un dresseur désigné sans qu'aucun de ses Pokémon ne tombe KO.
 - **L'Allégeance** : chaque chef a une position vis-à-vis du Consortium, qui évolue avec l'histoire. **Loyal** : il croit au système. **Compromis** : il sait et continue. **Vacillant** : il doute. **Dissident** : il agit contre.
-- **Un type, un poste** : le type de chaque chef reflète son métier dans le Consortium.
-  | Relais | Chef              | Type      | Mécanique enseignée                       | Allégeance (début → fin) |
+- **Un type, un poste** : le type de chaque chef reflète son métier dans le Consortium.| Relais | Chef              | Type      | Mécanique enseignée                       | Allégeance (début → fin) |
   | ------ | ----------------- | --------- | ------------------------------------------- | --------------------------- |
   | 1      | Tibère Oussou    | Roche     | Réserve, paliers de coût, Régénération | Loyal → Dissident          |
   | 2      | Solène Vauquelin | Électrik | Instabilité, Poussée, Jauge et Marques    | Loyal → Compromis          |
